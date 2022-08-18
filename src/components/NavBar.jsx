@@ -11,9 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Icono from './Icono';
 import PhonelinkIcon from '@mui/icons-material/Phonelink';
+import Logo from './Logo';
 
 const pages = ['Productos', 'Soporte', 'Contactanos'];
 const settings = ['Perfil', 'Cuenta', 'Carrito', 'Logout'];
@@ -41,9 +42,9 @@ export default function NavBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <PhonelinkIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
-            variant="h7"
+            variant="h5"
             noWrap
             component="a"
             href="/"
@@ -57,7 +58,7 @@ export default function NavBar() {
               textDecoration: 'none',
             }}
           >
-            {/* LOGO */}
+            ALIARG
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -96,7 +97,7 @@ export default function NavBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <PhonelinkIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -113,7 +114,7 @@ export default function NavBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            ALIARG
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -128,6 +129,7 @@ export default function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
+            <ShoppingCartIcon/>
             <Icono cant={20}/>
           </Box>
         </Toolbar>
