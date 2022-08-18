@@ -42,7 +42,7 @@ export default function NavBar() {
     <AppBar position="static" style={{ background: '#A14E3D' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -97,7 +97,7 @@ export default function NavBar() {
               ))}
             </Menu>
           </Box>
-          <PhonelinkIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -128,8 +128,33 @@ export default function NavBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <ShoppingCartIcon/>
+          <Box sx={{ display: 'flex', flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              </IconButton>
+            </Tooltip><Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
             <Icono cant={20}/>
           </Box>
         </Toolbar>
