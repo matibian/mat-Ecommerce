@@ -39,7 +39,7 @@ export default function NavBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ background: '#A14E3D' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
