@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/mat-Ecommerce/static/css/main.073c9b0a.css",
-    "main.js": "/mat-Ecommerce/static/js/main.269de2bb.js",
+    "main.js": "/mat-Ecommerce/static/js/main.13ef30c9.js",
     "static/js/787.2f9788ca.chunk.js": "/mat-Ecommerce/static/js/787.2f9788ca.chunk.js",
     "static/media/logo.svg": "/mat-Ecommerce/static/media/logo.70a7346966ccd5fa1a334ce9370bc25b.svg",
     "static/media/logosoloblanco.svg": "/mat-Ecommerce/static/media/logosoloblanco.aba2abcc5a68365250de8ea782b8ebbe.svg",
     "index.html": "/mat-Ecommerce/index.html",
     "main.073c9b0a.css.map": "/mat-Ecommerce/static/css/main.073c9b0a.css.map",
-    "main.269de2bb.js.map": "/mat-Ecommerce/static/js/main.269de2bb.js.map",
+    "main.13ef30c9.js.map": "/mat-Ecommerce/static/js/main.13ef30c9.js.map",
     "787.2f9788ca.chunk.js.map": "/mat-Ecommerce/static/js/787.2f9788ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.269de2bb.js"
+    "static/js/main.13ef30c9.js"
   ]
 }
