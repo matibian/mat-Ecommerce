@@ -7,6 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 export default function ItemListContainer(props) {
     const [open, setOpen] = React.useState(true);
+    const {greetings} = props
 
     return (
 
@@ -28,7 +29,7 @@ export default function ItemListContainer(props) {
                     }
                     sx={{ mb: 2 }}
                 >
-                    {props.greetings}!!! --
+                    {greetings}!!! --
                     Bienvenida a <strong>AliArg</strong>
                 </Alert>
             </Collapse>
