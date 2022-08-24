@@ -2,27 +2,29 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import Footer from './components/Footer';
+import ItemCount from './components/ItemCount';
 
 
 function App() {
-  const greetings = "Hola Lau"
-
+  const onAdd = () => {
+    console.log("Agregado al carrito")
+  }
 
   return (
     <div className="App">
       <div>
         <NavBar />
-        <ItemListContainer  greetings={greetings} />
       </div>
 
       <div>
-        {/* body */}
-        <img src={logo} alt="logo"/>
+        <br/>
+        <ItemCount stock={5} inicial={1} onAdd={onAdd}/>
+        <img src={logo} alt="logo" width={250} height={250} />
       </div>
 
       <div>
-        {/* Footer */}
+        <Footer />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-import * as React from 'react';
+
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,12 +12,16 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 
 import Icono from './Icono';
 import Logo from './Logo';
 
 const pages = ['Productos', 'Soporte', 'Contactanos'];
 const settings = ['Perfil', 'Cuenta', 'Carrito', 'Logout'];
+
+
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,7 +42,12 @@ export default function NavBar() {
     setAnchorElUser(null);
   };
 
+  const [contador, setContador] = useState(10)
+
+
   return (
+
+
     <AppBar position="static" style={{ background: '#A14E3D' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -154,7 +164,9 @@ export default function NavBar() {
                 </MenuItem>
               ))}
             </Menu>
-            <Icono cant={20}/>
+            <Box>
+              <Icono cant={20}/>
+            </Box> 
           </Box>
         </Toolbar>
       </Container>
