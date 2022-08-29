@@ -14,7 +14,7 @@ export default function Item({item}) {
     // const [products, setProducts] = useState([]);
     const {id, name, description, stock, inicial, img} = item
     const onAdd = () => {
-    console.log('Agregado al carrito item '+{id});
+    console.log('Agregaste un item al carrito');
     }
 
     let cargaProductos = new Promise((res, rej) => {
@@ -32,25 +32,25 @@ export default function Item({item}) {
 
     return (
 
-        <Card sx={{ maxWidth: 345, maxHeight: 500 }}>
+        <Card sx={{ width: 330, height: 435 }}>
             {loading ? <Esqueleto/> : 
             <>
                 <CardMedia
                     component="img"
-                    height="200"
-                    width="cover"
+                    height="150"
+                    width="90%"
                     image={img}
                     alt="img"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h6" component="div">
                         {name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12}} >
                         {description}
                     </Typography>
                 </CardContent>
-                    <ItemCount stock={stock} inicial={inicial} onAdd={onAdd}/>
+                <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} />
                 <br/>
                 <br/>
             </>

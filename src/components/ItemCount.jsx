@@ -17,7 +17,7 @@ export default function ItemCount({ stock, inicial, onAdd }) {
     console.log(counter)
 
     return (
-        <>
+        <div>
             <CardActions>
                 <Stack direction="row" spacing={5}>
                     <Button variant="outlined" 
@@ -37,12 +37,12 @@ export default function ItemCount({ stock, inicial, onAdd }) {
                 </Stack>
             </CardActions>
             <Button variant="contained" 
-                    sx={{ width : "cover"}}
+                    sx={{ width : "95%", height : "30"}}
                     disabled={counter===0}
                     onClick={onAdd}>
                 Agregar al carrito
             </Button>
-        </>
+        </div>
     );
 
 }

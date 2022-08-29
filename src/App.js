@@ -13,7 +13,9 @@ function App() {
   
 
   return (
-    <div className="App">
+    
+    <div className="App" style={{
+      backgroundColor: '#D7D6DE'}}>
       <div>
         <NavBar />
       </div>
