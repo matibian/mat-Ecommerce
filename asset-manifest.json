@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mat-Ecommerce/static/css/main.bd1d216d.css",
-    "main.js": "/mat-Ecommerce/static/js/main.b221124a.js",
+    "main.js": "/mat-Ecommerce/static/js/main.91674157.js",
     "static/js/787.2f9788ca.chunk.js": "/mat-Ecommerce/static/js/787.2f9788ca.chunk.js",
     "static/media/placa.jpg": "/mat-Ecommerce/static/media/placa.6a01814b06b4424f746d.jpg",
     "static/media/revicons.eot": "/mat-Ecommerce/static/media/revicons.a77de540a38981833f9e.eot",
@@ -11,11 +11,11 @@
     "static/media/logosoloblanco.svg": "/mat-Ecommerce/static/media/logosoloblanco.aba2abcc5a68365250de8ea782b8ebbe.svg",
     "index.html": "/mat-Ecommerce/index.html",
     "main.bd1d216d.css.map": "/mat-Ecommerce/static/css/main.bd1d216d.css.map",
-    "main.b221124a.js.map": "/mat-Ecommerce/static/js/main.b221124a.js.map",
+    "main.91674157.js.map": "/mat-Ecommerce/static/js/main.91674157.js.map",
     "787.2f9788ca.chunk.js.map": "/mat-Ecommerce/static/js/787.2f9788ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bd1d216d.css",
-    "static/js/main.b221124a.js"
+    "static/js/main.91674157.js"
   ]
 }
