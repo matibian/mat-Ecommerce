@@ -3,13 +3,14 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import ItemCount from './components/ItemCount';
+import Promesas from './test/Promesas';
+import Prompract from './test/Prompract';
+import Item from './components/Item';
+import ItemListContainer from './components/ItemListContainer';
 
 
 function App() {
-  const onAdd = () => {
-    console.log("Agregado al carrito")
-  }
+  
 
   return (
     <div className="App">
@@ -19,13 +20,18 @@ function App() {
 
       <div>
         <br/>
-        <ItemCount stock={5} inicial={1} onAdd={onAdd}/>
+        <ItemListContainer/>
         <img src={logo} alt="logo" width={250} height={250} />
       </div>
 
       <div>
-        <Footer />
+        {/* <Promesas/>
+        <Prompract/> */}
       </div>
+      
+      {/* <div>
+        <Footer />
+      </div> */}
     </div>
   );
 }

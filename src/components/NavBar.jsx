@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 
 
 import Icono from './Icono';
@@ -41,8 +40,6 @@ export default function NavBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
-  const [contador, setContador] = useState(10)
 
 
   return (
