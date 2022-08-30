@@ -1,11 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Promesas from './test/Promesas';
-import Prompract from './test/Prompract';
-import Item from './components/Item';
 import ItemListContainer from './components/ItemListContainer';
 
 
@@ -22,8 +18,7 @@ function App() {
 
       <div>
         <br/>
-        <ItemListContainer/>
-        <img src={logo} alt="logo" width={250} height={250} />
+        <ItemListContainer sx={{padding: 5}} />
       </div>
 
       <div>
@@ -31,9 +26,9 @@ function App() {
         <Prompract/> */}
       </div>
       
-      {/* <div>
+      <div>
         <Footer />
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import Item from './Item'
-import Grid from '@mui/material/Grid';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -45,7 +44,10 @@ export default function ItemList({ items }) {
                 containerClass="carousel-container"
                 itemClass="carousel-item-padding-40-px"
                 draggable={true}
-                ssr={true} // means to render carousel on server-side.
+                ssr={true}
+                
+                
+                // means to render carousel on server-side.
                 // keyBoardControl={true}
                 // dotListClass="custom-dot-list-style"
                 >
