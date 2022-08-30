@@ -32,7 +32,7 @@ export default function ItemCount({ stock, inicial, onAdd }) {
                 </Stack>
             </CardActions>
             <Button variant="contained" 
-                    sx={{ width : "95%", height : "30"}}
+                    sx={{ width : "95%", height : "30", paddingBottom :"2px"}}
                     disabled={counter===0}
                     onClick={onAdd}>
                 Agregar al carrito

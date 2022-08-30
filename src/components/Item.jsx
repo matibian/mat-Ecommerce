@@ -50,7 +50,7 @@ export default function Item({item}) {
                         {description}
                     </Typography>
                 </CardContent>
-                <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} />
+                <ItemCount stock={stock} inicial={inicial} onAdd={onAdd}  />
                 <br/>
                 <br/>
             </>

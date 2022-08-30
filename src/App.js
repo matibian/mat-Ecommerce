@@ -10,12 +10,16 @@ function App() {
 
   return (
     
-    <div className="App" style={{
-      backgroundColor: '#D7D6DE'}}>
+    <div className="App">
       <div>
         <NavBar />
       </div>
+      <img 
+          src={"https://i.ibb.co/tMMcd10/chip.png"} 
+          alt="logo" 
+          id='pic'
 
+      />  
       <div>
         <br/>
         <ItemListContainer sx={{padding: 5}} />
