@@ -91,7 +91,7 @@ export default function NavBar() {
   return (
 
 
-    <AppBar position="static" style={{ background: "linear-gradient(to right, #010003, #170036)" }}>
+    <AppBar position="static" style={{ background: "linear-gradient(to right, rgb(1, 0, 3), rgb(36 24 64 / 55%)", position: "fixed" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}

@@ -8,11 +8,11 @@ import 'react-multi-carousel/lib/styles.css';
 
 export default function ItemList({ items }) {
 
-    const prod = items.map((item) => (
-        <div>
-            <Item item={item} />
-        </div>
-    ))
+    // const prod = items.map((item) => (
+    //     <div>
+    //         <Item item={item} />
+    //     </div>
+    // ))
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -45,13 +45,13 @@ export default function ItemList({ items }) {
                 itemClass="carousel-item-padding-40-px"
                 draggable={true}
                 ssr={true}
-                
-                
-                // means to render carousel on server-side.
-                // keyBoardControl={true}
-                // dotListClass="custom-dot-list-style"
-                >
-                {prod}
+
+            >
+                {items.map((item) => (
+                    <div key={item.id}>
+                        <Item item={item} />
+                    </div>
+                ))}
             </Carousel>
         </div>
     )

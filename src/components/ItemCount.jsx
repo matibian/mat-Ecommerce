@@ -9,8 +9,6 @@ import Box from '@mui/material/Box';
 export default function ItemCount({ stock, inicial, onAdd }) {
     const [counter, setCounter] = useState(inicial)
 
-    console.log(counter)
-
     return (
         <div>
             <CardActions>
@@ -21,7 +19,6 @@ export default function ItemCount({ stock, inicial, onAdd }) {
                         <AddIcon />
                     </Button>
                     <Box style= {{fontSize: 22}} >
-                        Cantidad : {counter}
 
                     </Box>
                     <Button variant="outlined" 

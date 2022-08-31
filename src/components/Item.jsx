@@ -6,29 +6,27 @@ import Typography from '@mui/material/Typography';
 // import img from '../images/placa.jpg'
 import ItemCount from './ItemCount';
 import Esqueleto from './Esqueleto';
+import { data } from './mock/Api';
 
 
 
 export default function Item({item}) {
-    const [loading, setLoading] = useState(true);
-    // const [products, setProducts] = useState([]);
-    const {id, name, description, stock, inicial, img} = item
+    const [loading, setLoading] = useState(true)
+    const {name, description, stock, inicial, img} = item
+    console.log(data)
     const onAdd = () => {
     console.log('Agregaste un item al carrito');
     }
 
-    let cargaProductos = new Promise((res, rej) => {
-        setTimeout(() => {
-            res(item);
-            // rej();
-        }, 2000);
-    });
+    React.useEffect(() => {
+        data
+        .then((res) => setLoading(false))
+        // .catch((err) => console.log(err))
+        // .finally(() => {})
 
-    cargaProductos
-        .then((res) => {
-            setLoading(false);
 
-        });
+    },[])
+
 
     return (
 
@@ -54,7 +52,7 @@ export default function Item({item}) {
                 <br/>
                 <br/>
             </>
-            }   
+            }
         </Card>
     );
     
