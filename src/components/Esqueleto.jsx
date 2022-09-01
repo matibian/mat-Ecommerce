@@ -1,19 +1,33 @@
 import * as React from 'react';
 import Skeleton from '@mui/material/Skeleton';
-import Stack from '@mui/material/Stack';
+import Card from '@mui/material/Card';
+import { CardContent } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 export default function Esqueleto() {
     return (
-        <Stack spacing={1}>
-            <Skeleton variant="rectangular" width={"cover"} height={200} />
-            <Skeleton variant="text" sx={{ fontSize: '2rem' }} />
-            <Skeleton variant="text" sx={{ fontSize: '2rem' }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-            <Skeleton variant="rectangular" width={"cover"} height={40} />
-            <Skeleton variant="rectangular" width={"cover"} height={40} />
-        </Stack>
+        <Card sx={{ width: 330, height: 435 }}>
+            <Skeleton variant="rectangular" width={"cover"} height={150} />
+            <CardContent>
+                <Typography gutterBottom variant="h6" component="div">
+                    <Skeleton />
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12}} >
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                </Typography>
+            </CardContent>
+                <div style={{display:'flex', justifyContent:'space-around'}}>
+                    <Skeleton variant="rounded" width={70} height={40}  />
+                    <Skeleton variant="rounded" width={70} height={40} />
+                </div>
+
+            <CardContent>
+                <Skeleton variant="rounded" width={300} height={40}  />
+            </CardContent>
+        </Card>
+         
     );
 }

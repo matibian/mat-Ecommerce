@@ -9,29 +9,31 @@ import Box from '@mui/material/Box';
 export default function ItemCount({ stock, inicial, onAdd }) {
     const [counter, setCounter] = useState(inicial)
 
-    return (
-        <div>
-            <CardActions>
-                <Stack direction="row" spacing={5}>
-                    <Button variant="outlined" 
-                            onClick={() => setCounter(counter + 1)}
-                            disabled={counter===stock}>
-                        <AddIcon />
-                    </Button>
-                    <Box style= {{fontSize: 22}} >
+    console.log(counter)
 
-                    </Box>
-                    <Button variant="outlined" 
-                            onClick={() => setCounter(counter - 1)} 
-                            disabled={counter===0} >
-                        <RemoveIcon />
-                    </Button>
-                </Stack>
-            </CardActions>
-            <Button variant="contained" 
-                    sx={{ width : "95%", height : "30", paddingBottom :"2px"}}
-                    disabled={counter===0}
-                    onClick={onAdd}>
+    return (
+        <div style={{ flexDirection: 'column', alignItems: 'center', display: 'flex' }}>            <CardActions>
+            <Stack direction="row" spacing={1} sx={{ paddingTop: "2px" }}>
+                <Button variant="outlined"
+                    onClick={() => setCounter(counter + 1)}
+                    disabled={counter === stock}
+                    padding="0 0">
+                    <AddIcon />
+                </Button>
+                <Box style={{ fontSize: 22 }} >
+                    {counter}
+                </Box>
+                <Button variant="outlined"
+                    onClick={() => setCounter(counter - 1)}
+                    disabled={counter === 0} >
+                    <RemoveIcon />
+                </Button>
+            </Stack>
+        </CardActions>
+            <Button variant="contained"
+                sx={{ width: "95%", fontSize: "12px", paddingBottom: "2px" }}
+                disabled={counter === 0}
+                onClick={onAdd}>
                 Agregar al carrito
             </Button>
         </div>

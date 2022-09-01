@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -11,27 +11,17 @@ import { data } from './mock/Api';
 
 
 export default function Item({item}) {
-    const [loading, setLoading] = useState(true)
     const {name, description, stock, inicial, img} = item
     console.log(data)
     const onAdd = () => {
     console.log('Agregaste un item al carrito');
     }
 
-    React.useEffect(() => {
-        data
-        .then((res) => setLoading(false))
-        // .catch((err) => console.log(err))
-        // .finally(() => {})
-
-
-    },[])
 
 
     return (
 
         <Card sx={{ width: 330, height: 435 }}>
-            {loading ? <Esqueleto/> : 
             <>
                 <CardMedia
                     component="img"
@@ -52,8 +42,8 @@ export default function Item({item}) {
                 <br/>
                 <br/>
             </>
-            }
+            
         </Card>
     );
-    
+
 }

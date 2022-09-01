@@ -6,15 +6,11 @@ export default function ItemListContainer() {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true);
     
-
-    
     React.useEffect(() => {
         data
         .then((res) => setItems(res))
         .catch((err) => console.log(err))
-        .finally(() => {})
-
-
+        .finally(() => setLoading(false))
     },[])
 
     return (
@@ -23,3 +19,5 @@ export default function ItemListContainer() {
 
     )
 }
+
+

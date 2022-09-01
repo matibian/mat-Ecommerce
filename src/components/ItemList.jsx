@@ -2,36 +2,34 @@ import React from 'react'
 import Item from './Item'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Esqueleto from './Esqueleto';
+//import SkeletonCarousel from './SkeletonCarousel';
 
 
 
 
-export default function ItemList({ items }) {
 
-    // const prod = items.map((item) => (
-    //     <div>
-    //         <Item item={item} />
-    //     </div>
-    // ))
+export default function ItemList({ items,loading }) {
+
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 4,
-            slidesToSlide: 4 // optional, default to 1.
+            slidesToSlide: 4// optional, default to 1.
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2,
-            slidesToSlide: 2 // optional, default to 1.
+            items: 4,
+            slidesToSlide: 4 // optional, default to 1.
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1,
-            slidesToSlide: 1 // optional, default to 1.
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
         }
     };
 
-
+    const skeletonItem = [1,2,3,4]
 
 
     return (
@@ -45,9 +43,15 @@ export default function ItemList({ items }) {
                 itemClass="carousel-item-padding-40-px"
                 draggable={true}
                 ssr={true}
-
             >
-                {items.map((item) => (
+                {loading ?
+                skeletonItem.map((item) => (
+                    <div key={item}>
+                        <Esqueleto  />
+                    </div>
+                ))
+                :
+                items.map((item) => (
                     <div key={item.id}>
                         <Item item={item} />
                     </div>
