@@ -8,9 +8,7 @@ import Box from '@mui/material/Box';
 
 export default function ItemCount({ stock, inicial, onAdd }) {
     const [counter, setCounter] = useState(inicial)
-
-    console.log(counter)
-
+    
     return (
         <div style={{ flexDirection: 'column', alignItems: 'center', display: 'flex' }}>            <CardActions>
             <Stack direction="row" spacing={1} sx={{ paddingTop: "2px" }}>
@@ -25,7 +23,7 @@ export default function ItemCount({ stock, inicial, onAdd }) {
                 </Box>
                 <Button variant="outlined"
                     onClick={() => setCounter(counter - 1)}
-                    disabled={counter === 0} >
+                    disabled={counter === inicial} >
                     <RemoveIcon />
                 </Button>
             </Stack>

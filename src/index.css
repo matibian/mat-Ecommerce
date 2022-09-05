@@ -8,6 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background:#D7D6DE;
+  text-align: center;
+  background-image: url("https://i.ibb.co/tMMcd10/chip.png");
+  background-size: 100vw;
+  background-position: -30% fixed;
 }
 
 code {
@@ -20,10 +24,43 @@ code {
   height: 65vh;
   object-fit: cover;
 }
-/* .css-46bh2p-MuiCardContent-root {
+.css-46bh2p-MuiCardContent-root {
   padding: 5px !important
+}
+.css-kfme34-MuiCardContent-root{
+  padding: 0px !important
 }
 
 .css-1rwt2y5-MuiButtonBase-root-MuiButton-root{
   padding: 5px 10px
-} */
+}
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item{
+  color: white
+
+}
+
+
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
+  background-color:rgb(28 21 39);
+}
+
+.pro-sidebar .pro-menu{
+  background-color: rgb(9 6 15)
+}
+
+.css-4vzbn3-MuiButtonBase-root-MuiButton-root:hover{
+  background-color: rgb(79 36 113);
+}
+
+.css-nmn2m9-MuiGrid-root.MuiGrid-item {
+    padding-left: 34px;
+}
+
+.css-aqutp7-MuiGrid-root{
+  padding: 20px
+}
+
+.todo{
+  display: flex;
+}

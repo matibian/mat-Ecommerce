@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from 'react';
-import ItemList from './ItemList';
-import { data } from './mock/Api';
+import ItemListCarrousel from './ItemListCarrousel';
+import { data } from '../mock/Api';
 
-export default function ItemListContainer() {
+export default function ItemListContainerCarrousel() {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true);
     
@@ -14,9 +14,12 @@ export default function ItemListContainer() {
     },[])
 
     return (
-
-        <ItemList items={items} loading={loading} />
-
+    <>  
+        <div id="titlenovedades">
+            NOVEDADES
+        </div>
+        <ItemListCarrousel items={items} loading={loading} />
+    </>
     )
 }
 

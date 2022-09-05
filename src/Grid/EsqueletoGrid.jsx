@@ -4,10 +4,10 @@ import Card from '@mui/material/Card';
 import { CardContent } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
-export default function Esqueleto() {
+export default function EsqueletoGrid() {
     return (
-        <Card sx={{ width: 330, height: 435 }}>
-            <Skeleton variant="rectangular" width={"cover"} height={150} />
+        <Card sx={{ width: 200, height: 250 }}>
+            <Skeleton variant="rectangular" width={"cover"} height={115} />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
                     <Skeleton />
@@ -16,16 +16,12 @@ export default function Esqueleto() {
                     <Skeleton />
                     <Skeleton />
                     <Skeleton />
-                    <Skeleton />
                 </Typography>
             </CardContent>
-                <div style={{display:'flex', justifyContent:'space-around'}}>
-                    <Skeleton variant="rounded" width={70} height={40}  />
-                    <Skeleton variant="rounded" width={70} height={40} />
-                </div>
+
 
             <CardContent>
-                <Skeleton variant="rounded" width={300} height={40}  />
+                <Skeleton variant="rounded" width={200} height={25}  />
             </CardContent>
         </Card>
          

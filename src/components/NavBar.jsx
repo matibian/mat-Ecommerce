@@ -16,6 +16,7 @@ import Icono from './Icono';
 import Logo from './Logo';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
+import { Link } from 'react-router-dom';
 
 
 
@@ -91,7 +92,7 @@ export default function NavBar() {
   return (
 
 
-    <AppBar position="static" style={{ background: "linear-gradient(to right, rgb(1, 0, 3), rgb(36 24 64 / 55%)", position: "fixed" }}>
+    <AppBar position="static" style={{ background: "linear-gradient(to right, rgb(1, 0, 3), rgb(36 24 64 / 55%)"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -149,7 +150,9 @@ export default function NavBar() {
               ))}
             </Menu>
           </Box>
-          <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Link to="/home">
+            <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          </Link>
           <Typography
             variant="h5"
             noWrap
