@@ -9,6 +9,7 @@ import ItemListContainerGrid from './components/Grid/ItemListContainerGrid';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import Test from './test/Test';
 import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetailContainerModal from './components/ItemDetail/ItemDetailContainerModal';
 // import FetchContainer from './test/FetchContainer';
 
 
@@ -21,16 +22,15 @@ function App() {
         <SideBar sx={{width:"25%"}}/>
         <Routes>
           <Route path='/' element={<ItemListContainerGrid />} />
+          {/* <Route path='/' element={<ItemListContainerCarrousel sx={{ padding: 5 }} />} /> */}
           {/* <Route path='/'  element={} /> */}
-          {/* <Route path='/detail/:id' element={<ItemDetailContainer />} /> */}
+          <Route path='/detail/:id' element={<ItemDetailContainer />} />
+          <Route path='/category/:category' element={<ItemListContainerGrid/>} />
           {/* <Route path='/test' element={<Test />} /> */}
-
-        
         </Routes>
-        {/* <ItemDetailContainer trigger={buttonPopup} setTrigger={setButtonPopup} /> */}
-        <ItemListContainerCarrousel sx={{ padding: 5 }} />
+        {/* <ItemDetailContainerModal trigger={buttonPopup} setTrigger={setButtonPopup} /> */}
 
-        
+        {/* <ItemListContainerCarrousel sx={{ padding: 5 }} /> */}
         <Footer />
       </BrowserRouter>
 

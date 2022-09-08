@@ -12,15 +12,14 @@ import ItemModal from './ItemModal.jsx';
 
 
 export default function ItemGrid({ item }) {
-    const { name, description, stock, inicial, img, price,stars } = item
+    const { id, name, description, stock, inicial, img, price,stars } = item
     const [buttonPopup, setButtonPopup] = useState(false)
 
     const onAdd = () => {
         console.log('Agregaste un item al carrito');
     }
 
-    // const navigate = useNavigate()
-
+    const navigate = useNavigate()
 
 
     return (
@@ -43,11 +42,14 @@ export default function ItemGrid({ item }) {
                     </Typography>
                 </CardContent>
                 <CardContent sx={{positition: "relative", bottom: "25px"}} >
-                    <Button variant="contained"
+                    <Button 
+                        onClick={()=>navigate(`/detail/${id}`) }
+                        variant="contained"
                         sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", backgroundColor: "rgb(36 24 64)"}}
-                        onClick={setButtonPopup(true)}>
+                        // onClick={setButtonPopup(true)}
+                        >
                         Detalles
-                        <ItemModal trigger={buttonPopup} setTrigger={setButtonPopup} name={name} description={description} stock={stock} img={img} price={price} stars={stars} />
+                        {/* <ItemModal trigger={buttonPopup} setTrigger={setButtonPopup}/> */}
                     </Button>
                     <IconButton color="primary" aria-label="add to shopping cart">
                         <AddShoppingCartIcon sx={{ color: "rgb(36 24 64)", paddingTop: "2px" }} />
