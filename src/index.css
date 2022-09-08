@@ -60,7 +60,12 @@ code {
 .css-aqutp7-MuiGrid-root{
   padding: 20px
 }
+.css-wjh20t-MuiPagination-ul {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.574);
+  border-radius: 5px;
+}
 
-.todo{
-  display: flex;
+.css-1p5q5e5-MuiStack-root{
+  align-items: center;
 }

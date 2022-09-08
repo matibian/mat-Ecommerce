@@ -32,6 +32,7 @@ export default function ItemDetailContainer(props) {
           :
           <ItemDetail productDetail={productDetail} />}
         {props.children}
+          
       </div>
     </div>
   ) : "";

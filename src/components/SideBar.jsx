@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function SideBar() {
   return (
-    <ProSidebar>
+    <ProSidebar style={{width: "25%", position: "absolute", height:"auto"}} >
       {/* <Menu iconShape="square">
         <MenuItem icon={<DiamondIcon />}>Dashboard</MenuItem>
         <SubMenu title="Components" icon={<FavoriteIcon />}>

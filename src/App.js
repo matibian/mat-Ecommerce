@@ -5,8 +5,10 @@ import Footer from './components/Footer';
 import ItemListContainerCarrousel from './components/carrousel/ItemListContainerCarrousel';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SideBar from './components/SideBar';
-import ItemListContainerGrid from './Grid/ItemListContainerGrid';
+import ItemListContainerGrid from './components/Grid/ItemListContainerGrid';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
+import Test from './test/Test';
+import ItemDetail from './components/ItemDetail/ItemDetail';
 // import FetchContainer from './test/FetchContainer';
 
 
@@ -14,26 +16,24 @@ function App() {
   const [buttonPopup, setButtonPopup] = useState(true)
 
   return (
-    <>
       <BrowserRouter>
         <NavBar />
-        {/* <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-        <Route path="/categoria/:categoryId" element={<ItemListContainer />} /> */}
-        <div className="todo">
-          <SideBar />
-          <ItemListContainerGrid />
-        </div>
-        <div id="carrousel">
-          <br />
-          <ItemListContainerCarrousel sx={{ padding: 5 }} />
-        </div>
-        {/* <Route path="/detail/:productId" element={<ItemDetailContainer />} /> */}
-        <ItemDetailContainer trigger={buttonPopup} setTrigger={setButtonPopup} />
-        {/* </Routes> */}
+        <SideBar sx={{width:"25%"}}/>
+        <Routes>
+          <Route path='/' element={<ItemListContainerGrid />} />
+          {/* <Route path='/'  element={} /> */}
+          {/* <Route path='/detail/:id' element={<ItemDetailContainer />} /> */}
+          {/* <Route path='/test' element={<Test />} /> */}
+
+        
+        </Routes>
+        {/* <ItemDetailContainer trigger={buttonPopup} setTrigger={setButtonPopup} /> */}
+        <ItemListContainerCarrousel sx={{ padding: 5 }} />
+
+        
         <Footer />
       </BrowserRouter>
-    </>
+
 
 
 

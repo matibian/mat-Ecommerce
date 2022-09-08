@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import ItemListCarrousel from './ItemListCarrousel';
 import { data } from '../mock/Api';
+import ItemListGrid from './ItemListGrid';
 
-export default function ItemListContainerCarrousel() {
+export default function ItemListContainerGrid() {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true);
 
@@ -14,15 +14,9 @@ export default function ItemListContainerCarrousel() {
     }, [])
 
     return (
-        <>   
-        <div id="carrousel">
-            <br />
-            <div id="titlenovedades">
-                NOVEDADES
-            </div>
-            <ItemListCarrousel items={items} loading={loading} />
+        <div style={{marginLeft:"25%"}}>
+            <ItemListGrid items={items} loading={loading} />
         </div>
-        </>
     )
 }
 

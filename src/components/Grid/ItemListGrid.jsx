@@ -6,7 +6,8 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import EsqueletoGrid from './EsqueletoGrid';
-
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 
 
@@ -21,7 +22,7 @@ export default function ItemListGrid({ items, loading }) {
     }));
 
 
-    const skeletonItem = [1, 2, 3, 4, 5, 6, 7]
+    const skeletonItem = [1, 2, 3, 4, 5, 6, 7, 8]
 
 
     return (
@@ -43,6 +44,13 @@ export default function ItemListGrid({ items, loading }) {
                         ))}
                 </Grid>
             </Box>
+            <Stack spacing={2}>
+                <Pagination 
+                    count={10} 
+                    variant="outlined" 
+                    shape="rounded" showFirstButton showLastButton
+                    />
+            </Stack>
 
         </div>
     )
