@@ -13,13 +13,7 @@ import Stack from '@mui/material/Stack';
 
 
 export default function ItemListGrid({ items, loading }) {
-    const Item = styled(Paper)(({ theme }) => ({
-        backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-        ...theme.typography.body2,
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-    }));
+
 
 
     const skeletonItem = [1, 2, 3, 4, 5, 6, 7, 8]

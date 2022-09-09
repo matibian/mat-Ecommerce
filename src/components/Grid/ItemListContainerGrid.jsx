@@ -8,8 +8,6 @@ export default function ItemListContainerGrid() {
     const [loading, setLoading] = useState(true);
     const {category}= useParams()
 
-    console.log(category)
-
     useEffect(() => {
         data
             .then((res) => {

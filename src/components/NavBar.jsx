@@ -150,7 +150,7 @@ export default function NavBar() {
               ))}
             </Menu>
           </Box>
-          <Link to="/">
+          <Link to="/home">
             <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           </Link>
           <Typography

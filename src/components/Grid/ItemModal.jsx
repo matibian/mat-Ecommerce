@@ -1,86 +1,73 @@
-// import React, { useState, useEffect } from 'react'
-// import { data } from '../mock/Api.js';
-// import { IconButton } from '@mui/material';
-// import LoadingButton from '@mui/lab/LoadingButton';
-// import CloseIcon from '@mui/icons-material/Close';
-// import '../../modalDetail.css'
+import React, { useState, useEffect } from 'react'
 
-// import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
-// import Typography from '@mui/material/Typography';
-// import Grid from '@mui/material/Grid';
-// import Rating from '@mui/material/Rating';
-// import { Button } from '@mui/material';
+import { IconButton } from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton';
+import CloseIcon from '@mui/icons-material/Close';
+import '../../modalDetail.css'
 
-// export default function ItemModal(props) {
-//   const [productDetail, setProductDetail] = useState({})
-//   const [loading, setLoading] = useState(true);
-  
-//   const [img, name, description, price, stars] = productDetail
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Rating from '@mui/material/Rating';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-//   console.log(props)
+export default function ItemModal(props) {
 
-//   useEffect(() => {
-//     data
-//       .then((res) => setProductDetail(res.find((item) => item.id === 4)))
-//       .catch(() => console.log("error"))
-//       .finally(() => setLoading(false))
+  const navigate = useNavigate()
+  console.log(props.item)
 
-//     }, [])
+  const { id, name, description, img, price,stars } = props.item
 
-//   return (props.trigger) ? (
-//     <div className='popup'>
-//       <div className="popup-inner">
-//         <IconButton
-//           onClick={()=> props.setTrigger(false)}
-//           className="close-btn">
-//           <CloseIcon />
-//         </IconButton>
-//         {loading ?
-//           <Card>
-//             <LoadingButton loading  sx={{ width: 200, height:290}}/>
-//           </Card>
-//           :
-//           <Grid container spacing={2}>
-//                 <Grid item xs={6} md={6}>
-//                     <CardMedia
-//                         component="img"
-//                         height="200"
-//                         width="40vw"
-//                         image={img}
-//                         alt="img"
-//                     />
-//                 </Grid>
-//                 <Grid item xs={6} md={6} style={{ alignItems: 'center' }} >
-//                     <CardContent>
-//                         <Typography variant="body2" color="text.primary" sx={{ fontSize: 16, fontWeight: "bold", padding: "5px" }} >
-//                             {name}
-//                         </Typography>
-//                         <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
-//                             {description}
-//                         </Typography>
-//                         <Typography gutterBottom variant="h6" component="div" marginBottom="0px">
-//                             {price}
-//                         </Typography>
-//                     </CardContent>
-//                     <CardContent sx={{ positition: "relative", bottom: "25px" }} >
-//                         <Rating name="read-only" value={stars} readOnly precision={0.5}  />
-//                         <br/>
-//                         <br/>
-//                         <Button onClick={props.setTrigger(true)}
-//                             variant="contained" 
-//                             style={{
-//                                 backgroundColor: "rgb(36 24 64)",
-//                                 fontSize: "10px"}}>
-//                             Ver más...
+  return (props.trigger) ? (
+    <div className='popup'>
+      <div className="popup-inner">
+        <IconButton
+          onClick={()=> props.setTrigger(false)}
+          className="close-btn">
+          <CloseIcon />
+        </IconButton>
+          <Grid container spacing={2}>
+                <Grid item xs={6} md={6}>
+                    <CardMedia
+                        component="img"
+                        height="200"
+                        width="40vw"
+                        image={img}
+                        alt="img"
+                    />
+                </Grid>
+                <Grid item xs={6} md={6} style={{ alignItems: 'center' }} >
+                    <CardContent>
+                        <Typography variant="body2" color="text.primary" sx={{ fontSize: 16, fontWeight: "bold", padding: "5px" }} >
+                            {name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
+                            {description}
+                        </Typography>
+                        <Typography gutterBottom variant="h6" component="div" marginBottom="0px">
+                            {price}
+                        </Typography>
+                    </CardContent>
+                    <CardContent sx={{ positition: "relative", bottom: "25px" }} >
+                        <Rating name="read-only" value={stars} readOnly precision={0.5}  />
+                        <br/>
+                        <br/>
+                        <Button 
+                            onClick={()=>navigate(`/detail/${id}`) }
+                            variant="contained" 
+                            style={{
+                                backgroundColor: "rgb(36 24 64)",
+                                fontSize: "10px"}}>
+                            Ver más...
                             
-//                         </Button>
-//                     </CardContent>
-//                 </Grid>
-//             </Grid>}
-//         {props.children}
-          
-//       </div>
-//     </div>
-//   ) : "";
-// }
+                        </Button>
+                    </CardContent>
+                </Grid>
+            </Grid>
+        {props.children}
+      </div>
+    </div>
+  ) : "";
+}
