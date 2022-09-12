@@ -9,11 +9,20 @@ import Rating from '@mui/material/Rating';
 import { Button, Card } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import ItemCount from '../ItemCount';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function ItemDetail({ productDetail, loading }) {
 
+  const [count, setCount] = useState(1);
+  const [buy, setBuy] = useState(false);
+  const navigate = useNavigate()
+
+  const onAdd = () => {
+    setBuy(true);
+  }
   const { img, price, description, stars, name, stock, inicial, more } = productDetail;
   console.log(productDetail)
   return (
@@ -50,7 +59,7 @@ export default function ItemDetail({ productDetail, loading }) {
                 <CardMedia
                   component="img"
                   width="20vh"
-                  height= "300px"
+                  height="300px"
                   image={img}
                   alt="img"
                 />
@@ -71,8 +80,23 @@ export default function ItemDetail({ productDetail, loading }) {
                   <Rating name="read-only" value={stars} readOnly precision={0.5} />
                   <br />
                   <br />
-                  <ItemCount stock={stock} inicial={inicial} />
-
+                  {!buy
+                    ? <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} count={count} setCount={setCount} />
+                    : <>
+                      <Button variant="contained"
+                        onClick={()=>navigate(`/cart`)}
+                        sx={{ width: "55%", height:"40px" , fontSize: "12px", margin: "10px"}}
+                      >
+                        Ir al carrito
+                      </Button>
+                      <Button 
+                        onClick={()=>navigate(`/`)}
+                        variant="contained"
+                        sx={{ width: "35%", height:"40px", fontSize: "12px", margin: "10px" }}
+                      >
+                        Seguir comprando
+                      </Button>
+                    </>}
                 </CardContent>
               </Grid>
               <Typography variant="body2" color="text.primary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >

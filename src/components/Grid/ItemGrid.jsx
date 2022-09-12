@@ -23,8 +23,6 @@ export default function ItemGrid({ item }) {
         setItemModal(item)
     }
 
-    
-
     return (
     <>
         <Card sx={{ width: 220, height: 250}}>
@@ -57,7 +55,7 @@ export default function ItemGrid({ item }) {
                     <ItemModal 
                         trigger={buttonPopup} 
                         setTrigger={setButtonPopup} 
-                        item={{itemModal}}/>
+                        item={{...itemModal}}/>
                     <IconButton color="primary" aria-label="add to shopping cart">
                         <AddShoppingCartIcon sx={{ color: "rgb(36 24 64)", paddingTop: "2px" }} />
                     </IconButton>

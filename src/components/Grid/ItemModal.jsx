@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import { IconButton } from '@mui/material';
-import LoadingButton from '@mui/lab/LoadingButton';
 import CloseIcon from '@mui/icons-material/Close';
 import '../../modalDetail.css'
 
@@ -16,9 +15,10 @@ import { useNavigate } from 'react-router-dom';
 export default function ItemModal(props) {
 
   const navigate = useNavigate()
-  console.log(props.item)
-
+  
+  
   const { id, name, description, img, price,stars } = props.item
+
 
   return (props.trigger) ? (
     <div className='popup'>
