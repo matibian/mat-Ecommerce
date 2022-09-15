@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -14,9 +14,9 @@ export default function ItemGrid({ item }) {
     const [buttonPopup, setButtonPopup] = useState(false)
     const [itemModal, setItemModal] = useState()
 
-    const onAdd = () => {
-        console.log('Agregaste un item al carrito');
-    }
+    // const onAdd = () => {
+    //     console.log('Agregaste un item al carrito');
+    // }
 
     const handleClick = () => {
         setButtonPopup(true);

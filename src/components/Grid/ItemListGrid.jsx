@@ -2,9 +2,7 @@ import React from 'react'
 import ItemGrid from './ItemGrid'
 import 'react-multi-carousel/lib/styles.css';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import { experimentalStyled as styled } from '@mui/material/styles';
 import EsqueletoGrid from './EsqueletoGrid';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';

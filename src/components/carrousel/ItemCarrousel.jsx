@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,7 +9,7 @@ import { Button, IconButton } from '@mui/material';
 
 
 export default function ItemCarrousel({ item }) {
-    const { name, description, stock, inicial, img, price } = item
+    const { name, img, price } = item
 
     const onAdd = () => {
         console.log('Agregaste un item al carrito');

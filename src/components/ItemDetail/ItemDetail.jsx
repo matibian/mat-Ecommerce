@@ -1,16 +1,16 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
-import { Button, Card } from '@mui/material';
+import { Button} from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import ItemCount from '../ItemCount';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 
 
 
@@ -18,12 +18,18 @@ export default function ItemDetail({ productDetail, loading }) {
 
   const [count, setCount] = useState(1);
   const [buy, setBuy] = useState(false);
+  const { img, price, description, stars, name, stock, inicial, more, id } = productDetail;
   const navigate = useNavigate()
+  const{addItem}=useCart()
+
 
   const onAdd = () => {
+    let purchase = {
+      id, name, price, stock, img, quantity:count
+    }
     setBuy(true);
+    addItem(purchase)
   }
-  const { img, price, description, stars, name, stock, inicial, more } = productDetail;
   console.log(productDetail)
   return (
     <div>

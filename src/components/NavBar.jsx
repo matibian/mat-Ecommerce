@@ -17,7 +17,7 @@ import Logo from './Logo';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import { Link } from 'react-router-dom';
-
+import { useCart } from '../context/CartContext';
 
 
 
@@ -28,6 +28,10 @@ const settings = ['Perfil', 'Cuenta', 'Carrito', 'Logout'];
 
 
 export default function NavBar() {
+  const {carTotal} = useCart();
+
+  console.log(carTotal)
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -221,7 +225,7 @@ export default function NavBar() {
               ))}
             </Menu>
             <Box>
-              <Icono cant={20} />
+              <Icono cant={carTotal} />
             </Box>
           </Box>
         </Toolbar>
