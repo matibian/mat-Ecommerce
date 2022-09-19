@@ -69,3 +69,50 @@ code {
 .css-1p5q5e5-MuiStack-root{
   align-items: center;
 }
+
+#homepic{
+  background-image: url("https://i.ibb.co/S3xNVZm/home.jpg");
+  /* https://i.ibb.co/RywYP9M/Purple-Modern-Computer-Recommendation-You-Tube-Thumbnail.png */
+  color: white;
+  /* height: 65vh; */
+  background-size: cover;
+  background-position: right;
+}
+
+#home{
+  margin-right: 50%;
+}
+
+#home h1, h2, h3, button{
+  text-align: left;
+  padding: 2vh;
+}
+
+#home h1{
+  font-size: 70px;
+
+  font-weight: bolder;
+  text-align: center;
+}
+
+#home h2 {
+  font-size: 40px;
+  padding-bottom: 30px;
+}
+
+#home h3{
+  text-align: end;
+  padding: 5%;
+
+}
+
+.titlehome{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width:650px){
+  #home h3 {
+    display: none;
+  }
+
+}

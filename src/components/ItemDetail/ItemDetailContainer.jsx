@@ -19,9 +19,7 @@ export default function ItemDetailContainer() {
 
   return (
     <>
-      <div
-      style={{marginLeft: "25%"}}
-      >
+      <div>
         <ItemDetail productDetail={productDetail} loading={loading} />
 
       </div>

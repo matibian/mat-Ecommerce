@@ -22,7 +22,7 @@ export default function ItemListContainerGrid() {
     }, [category])
 
     return (
-        <div style={{marginLeft:"25%"}}>
+        <div style={{marginLeft:"5%"}}>
             <ItemListGrid items={items} loading={loading} />
         </div>
     )

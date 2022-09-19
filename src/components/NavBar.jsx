@@ -17,7 +17,8 @@ import Logo from './Logo';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+
+
 
 
 
@@ -28,12 +29,10 @@ const settings = ['Perfil', 'Cuenta', 'Carrito', 'Logout'];
 
 
 export default function NavBar() {
-  const {carTotal} = useCart();
-
-  console.log(carTotal)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -49,6 +48,15 @@ export default function NavBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -96,7 +104,7 @@ export default function NavBar() {
   return (
 
 
-    <AppBar position="static" style={{ background: "linear-gradient(to right, rgb(1, 0, 3), rgb(36 24 64 / 55%)"}}>
+    <AppBar position="static" style={{ background: "linear-gradient(to right, rgb(1, 0, 3), rgb(36 24 64 / 55%)" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -147,6 +155,7 @@ export default function NavBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
@@ -175,6 +184,9 @@ export default function NavBar() {
           >
             ALIARG
           </Typography>
+
+
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -225,12 +237,12 @@ export default function NavBar() {
               ))}
             </Menu>
             <Box>
-              <Icono cant={carTotal} />
+                <Icono />
             </Box>
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+    </AppBar >
   );
 };
 

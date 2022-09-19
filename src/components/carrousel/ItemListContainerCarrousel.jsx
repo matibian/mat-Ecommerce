@@ -15,7 +15,7 @@ export default function ItemListContainerCarrousel() {
 
     return (
         <>   
-        <div id="carrousel">
+        <div id="carrousel"  sx={{ padding: 5 }} >
             <br />
             <div id="titlenovedades">
                 NOVEDADES

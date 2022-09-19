@@ -34,7 +34,7 @@ export default function ItemCarrousel({ item }) {
                         {name}
                     </Typography>
                     <Typography gutterBottom variant="h6" component="div" marginBottom="0px">
-                        {price}
+                        ${price.toLocaleString('de-DE')}
                     </Typography>
                 </CardContent>
                 <CardContent sx={{positition: "relative", bottom: "25px"}} >
