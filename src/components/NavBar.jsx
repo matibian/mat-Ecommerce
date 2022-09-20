@@ -17,6 +17,8 @@ import Logo from './Logo';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -33,6 +35,8 @@ export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const navigate = useNavigate()
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -155,12 +159,16 @@ export default function NavBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+              <MenuItem onClick={() => navigate(`category/Componentes`)}>
+                <Typography textAlign="center">Componentes</Typography>
+              </MenuItem>
+              <MenuItem onClick={() => navigate(`category/Almacenamiento`)}>
+                <Typography textAlign="center">Almacenamiento</Typography>
+              </MenuItem>
+              <MenuItem onClick={() => navigate(`category/Perifericos`)}>
+                <Typography textAlign="center">Periféricos</Typography>
+              </MenuItem>
 
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
             </Menu>
           </Box>
           <Link to="/">
@@ -188,15 +196,22 @@ export default function NavBar() {
 
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button
+              onClick={() => navigate(`category/Componentes`)}
+              sx={{ my: 2, color: 'white', display: 'block' }}>
+              Componentes
+            </Button>
+            <Button
+              onClick={() => navigate(`category/Almacenamiento`)}
+              sx={{ my: 2, color: 'white', display: 'block' }}>
+              Almacenamiento
+            </Button>
+            <Button
+              onClick={() => navigate(`category/Perifericos`)}
+              sx={{ my: 2, color: 'white', display: 'block' }}>
+              Periéricos
+            </Button>
+
           </Box>
           <Search>
             <SearchIconWrapper>
@@ -237,7 +252,7 @@ export default function NavBar() {
               ))}
             </Menu>
             <Box>
-                <Icono />
+              <Icono />
             </Box>
           </Box>
         </Toolbar>
