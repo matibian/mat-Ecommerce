@@ -24,9 +24,6 @@ export default function ItemGrid({ item }) {
         addItem(purchase)
     }
 
-    // const onAdd = () => {
-    //     console.log('Agregaste un item al carrito');
-    // }
 
     const handleClick = () => {
         setButtonPopup(true);
@@ -55,10 +52,9 @@ export default function ItemGrid({ item }) {
                     <CardContent sx={{ positition: "relative", bottom: "25px" }} >
                         <Button
                             onClick={() => handleClick()}
-                            // onClick={()=>navigate(`/detail/${id}`) }
                             variant="contained"
                             sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", backgroundColor: "rgb(36 24 64)" }}
-                        // onClick={setButtonPopup(true)}
+
                         >
                             Detalles
                         </Button>

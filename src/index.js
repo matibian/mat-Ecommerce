@@ -4,21 +4,21 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBucFJzkUB-S3aH435uMw6sVgcEx8A8RKo",
-  authDomain: "aliarg-c6eec.firebaseapp.com",
-  projectId: "aliarg-c6eec",
-  storageBucket: "aliarg-c6eec.appspot.com",
-  messagingSenderId: "118354038114",
-  appId: "1:118354038114:web:2b51154956ed42b67f703b"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBucFJzkUB-S3aH435uMw6sVgcEx8A8RKo",
+//   authDomain: "aliarg-c6eec.firebaseapp.com",
+//   projectId: "aliarg-c6eec",
+//   storageBucket: "aliarg-c6eec.appspot.com",
+//   messagingSenderId: "118354038114",
+//   appId: "1:118354038114:web:2b51154956ed42b67f703b"
+// };
 
 
-initializeApp(firebaseConfig);
+// initializeApp(firebaseConfig);
 
 
 

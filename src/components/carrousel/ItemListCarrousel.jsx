@@ -37,12 +37,12 @@ export default function ItemListCarrousel({ items,loading }) {
         <div>
             <Carousel
                 responsive={responsive}
-                showDots={true}
+                showDots={false}
                 infinite={true}
                 containerClass="carousel-container"
                 itemClass="carousel-item-padding-40-px"
                 draggable={true}
-                ssr={true}
+                // ssr={true}
             >
                 {loading ?
                 skeletonItem.map((item) => (

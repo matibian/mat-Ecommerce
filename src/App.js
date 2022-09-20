@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import ItemListContainerCarrousel from './components/carrousel/ItemListContainerCarrousel';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SideBar from './components/SideBar';
 import ItemListContainerGrid from './components/Grid/ItemListContainerGrid';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import { CartProvider } from './context/CartContext';
@@ -22,7 +21,6 @@ export default function App() {
   <CartProvider >
     <BrowserRouter>
         <NavBar />
-        {/* <SideBar sx={{width:"25%"}}/> */}
         <Routes>
           <Route path='/' element={<><Home/><ItemListContainerCarrousel/></>} />
           <Route path='/category/all' element={<ItemListContainerGrid />} />

@@ -12,10 +12,10 @@ import {
     MDBRow,
     MDBTypography,
 } from "mdb-react-ui-kit";
-import React from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import { useCart } from '../../context/CartContext';
-import CartItem from "./CartItem";
+
 
 
 export default function Cart() {
@@ -23,19 +23,7 @@ export default function Cart() {
     const { cart, removeItem, sumItem, cartTotal,reduceItem, clear } = useCart();
     const navigate = useNavigate()
 
-    // const [number, setNumber] = useState({ one: 0, two: 0, three: 0 })
-    // const [suma, setSuma] = useState()
-
-    // useEffect(() => {
-    //     const { one, two, three } = number
-    //     setSuma(Number(one) + Number(two) + Number(three))
-    // }, [number])
-
-    // const handleInput = (event) => {
-    //     const { name, value } = event.target
-    //     setNumber({ ...number, [name]: value })
-    // }
-
+    const [envio, setEnvio] = useState(0);
 
 
     return (
@@ -174,11 +162,11 @@ export default function Cart() {
                                             </MDBTypography>
 
                                             <div className="mb-4 pb-2">
-                                                <select className="select p-2 rounded bg-grey" style={{ width: "100%" }}>
-                                                    <option value="1">GBA - Gratis</option>
-                                                    <option value="2">Provincia de Buenos Aires - $1000</option>
-                                                    <option value="3">Santa Fé, La Pampa, Cordoba - $2000 </option>
-                                                    <option value="4">Resto de Argentina - $3000</option>
+                                                <select className="select p-2 rounded bg-grey" onChange={(choice) => setEnvio(Number(choice.target.value))} style={{ width: "100%" }}>
+                                                    <option value="0">GBA - Gratis</option>
+                                                    <option value="1000">Provincia de Buenos Aires - $1000</option>
+                                                    <option value="2000">Santa Fé, La Pampa, Cordoba - $2000 </option>
+                                                    <option value="3000">Resto de Argentina - $3000</option>
                                                 </select>
                                             </div>
 
@@ -198,7 +186,10 @@ export default function Cart() {
                                                 </MDBTypography>
                                                 <MDBTypography tag="h5">$
 
-                                                    {cartTotal().toLocaleString('de-DE')} total
+                                                    {cartTotal()!== 0
+                                                    ?
+                                                    (cartTotal()+envio).toLocaleString('de-DE')
+                                                    : 0} total
 
                                                 </MDBTypography>
                                             </div>

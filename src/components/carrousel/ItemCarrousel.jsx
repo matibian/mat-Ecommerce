@@ -5,14 +5,20 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Button, IconButton } from '@mui/material';
-
+import { useCart } from '../../context/CartContext.js';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function ItemCarrousel({ item }) {
-    const { name, img, price } = item
+    const { name, img, price,id, stock  } = item
+    const navigate = useNavigate()
+    const { addItem } = useCart()
 
     const onAdd = () => {
-        console.log('Agregaste un item al carrito');
+        let purchase = {
+            id, name, price, stock, img, quantity: 1
+        }
+        addItem(purchase)
     }
 
 
@@ -40,10 +46,16 @@ export default function ItemCarrousel({ item }) {
                 <CardContent sx={{positition: "relative", bottom: "25px"}} >
                     <Button variant="contained"
                         sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", backgroundColor: "rgb(36 24 64)"}}
-                        onClick={onAdd}>
+                        onClick={()=>navigate(`/detail/${id}`)}
+                        >
                         Detalles
                     </Button>
-                    <IconButton color="primary" aria-label="add to shopping cart">
+                    
+                    <IconButton 
+                        color="primary" 
+                        aria-label="add to shopping cart"
+                        onClick={onAdd}
+                        >
                         <AddShoppingCartIcon sx={{ color: "rgb(36 24 64)", paddingTop: "2px" }} />
                     </IconButton>
                 </CardContent>
