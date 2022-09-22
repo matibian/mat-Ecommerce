@@ -30,7 +30,7 @@ export default function App() {
   return (
     <CartProvider >
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
           <NavBar />
           <Routes>
             <Route path='/' element={<><Home /><ItemListContainerCarrousel /></>} />
@@ -46,7 +46,7 @@ export default function App() {
 
           {/* <ItemListContainerCarrousel sx={{ padding: 5 }} /> */}
           <Footer />
-        </BrowserRouter>
+        {/* </BrowserRouter> */}
       </ThemeProvider>
     </CartProvider>
 
