@@ -20,10 +20,10 @@ import { useCart } from '../../context/CartContext';
 
 export default function Cart() {
 
-    const { cart, removeItem, sumItem, cartTotal,reduceItem, clear } = useCart();
+    const { cart, removeItem, sumItem, cartTotal,reduceItem,envio, delivery, clear } = useCart();
     const navigate = useNavigate()
 
-    const [envio, setEnvio] = useState(0);
+
 
 
     return (
@@ -74,7 +74,7 @@ export default function Cart() {
                                                     </MDBCol>
                                                     <MDBCol md="3" lg="3" xl="3" className="d-flex align-items-center">
                                                         <MDBBtn color="link" className="px-2"
-                                                            onClick={() =>reduceItem(item)}>
+                                                            onClick={item.quantity=== 1? ()=>removeItem(item.id): () =>reduceItem(item)}>
                                                             <MDBIcon fas icon="minus" />
                                                         </MDBBtn>
 
@@ -116,7 +116,7 @@ export default function Cart() {
                                                     />
                                                     <CardContent padding="5px">
                                                         <Typography variant="body2" color="text.secondary" sx={{ fontSize: 30, padding: "40px 0" }} >
-                                                            Todavía no compraste nada
+                                                            Todavía no elegiste nada
                                                         </Typography>
                                                     </CardContent>
                                                 </>
@@ -152,7 +152,7 @@ export default function Cart() {
                                                 <MDBTypography tag="h5">
 
 
-                                                    ${cartTotal().toLocaleString('de-DE')} total
+                                                    ${cartTotal(0).toLocaleString('de-DE')} subtotal
 
                                                 </MDBTypography>
                                             </div>
@@ -162,7 +162,7 @@ export default function Cart() {
                                             </MDBTypography>
 
                                             <div className="mb-4 pb-2">
-                                                <select className="select p-2 rounded bg-grey" onChange={(choice) => setEnvio(Number(choice.target.value))} style={{ width: "100%" }}>
+                                                <select className="select p-2 rounded bg-grey" onChange={(choice) => delivery(Number(choice.target.value))} style={{ width: "100%" }}>
                                                     <option value="0">GBA - Gratis</option>
                                                     <option value="1000">Provincia de Buenos Aires - $1000</option>
                                                     <option value="2000">Santa Fé, La Pampa, Cordoba - $2000 </option>
@@ -188,15 +188,16 @@ export default function Cart() {
 
                                                     {cartTotal()!== 0
                                                     ?
-                                                    (cartTotal()+envio).toLocaleString('de-DE')
+                                                    (cartTotal()+ envio).toLocaleString('de-DE')
                                                     : 0} total
 
                                                 </MDBTypography>
                                             </div>
 
-                                            <MDBBtn color="dark" block size="lg">
+                                            <MDBBtn color="dark" block size="lg" onClick={() => navigate(`/checkout`)}>
                                                 Pagar
                                             </MDBBtn>
+                                            
                                         </div>
                                     </MDBCol>
                                 </MDBRow>

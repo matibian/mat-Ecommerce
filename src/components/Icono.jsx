@@ -11,7 +11,7 @@ export default function Icono() {
   return (
     <Badge 
     badgeContent={cartQuantity()} 
-    color="primary"
+    color="primary" 
     onClick={() => navigate(`/cart`)}
     style={{cursor: 'pointer'}}
     >

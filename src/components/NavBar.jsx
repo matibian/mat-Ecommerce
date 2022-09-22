@@ -112,23 +112,25 @@ export default function NavBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          <Link to="/">
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            className="titlealiarg"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'white',
               textDecoration: 'none',
             }}
           >
             ALIARG
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -168,17 +170,21 @@ export default function NavBar() {
               <MenuItem onClick={() => navigate(`category/Perifericos`)}>
                 <Typography textAlign="center">Periféricos</Typography>
               </MenuItem>
+              <MenuItem onClick={() => navigate(`category/Tablets`)}>
+                <Typography textAlign="center">Tablets</Typography>
+              </MenuItem>
 
             </Menu>
           </Box>
           <Link to="/">
             <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           </Link>
+          <Link to="/">
           <Typography
+            className="titlealiarg"
             variant="h5"
             noWrap
             component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -186,13 +192,13 @@ export default function NavBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'white',
               textDecoration: 'none',
             }}
           >
             ALIARG
           </Typography>
-
+          </Link>
 
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -209,7 +215,12 @@ export default function NavBar() {
             <Button
               onClick={() => navigate(`category/Perifericos`)}
               sx={{ my: 2, color: 'white', display: 'block' }}>
-              Periéricos
+              Periféricos
+            </Button>
+            <Button
+              onClick={() => navigate(`category/Tablets`)}
+              sx={{ my: 2, color: 'white', display: 'block' }}>
+              Tablets
             </Button>
 
           </Box>

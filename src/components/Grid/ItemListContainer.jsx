@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import ItemListCarrousel from './ItemListCarrousel';
+import { useParams } from 'react-router-dom';
 import { data } from '../mock/Api';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import ItemList from './ItemList';
 import { db } from '../../firebase/firebase';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
-export default function ItemListContainerCarrousel() {
+export default function ItemListContainer() {
     const [items, setItems] = useState([])
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
+    const { category } = useParams()
 
 
+    //firebase
 
     useEffect(() => {
         setLoading(true)
-        const products =  query(collection(db, "products"), where ("nov", "==", true)) 
+        const products = category ? query(collection(db, "products"), where ("category", "==", category)) :collection(db, "products")
         getDocs(products)
             .then((res) => {
                 const list = res.docs.map((product) => {
@@ -28,27 +31,27 @@ export default function ItemListContainerCarrousel() {
             .catch((err) => console.log(err))
             .finally(() => setLoading(false))
 
-    }, [])
+    }, [category])
 
 
-
+    //mock
     // useEffect(() => {
     //     data
-    //         .then((res) => setItems(res))
+    //         .then((res) => {
+    //         if (category){
+    //             setItems(res.filter(item => item.category === category))
+    //         } else {
+    //             setItems(res)
+    //         }
+    //     })
     //         .catch((err) => console.log(err))
     //         .finally(() => setLoading(false))
-    // }, [])
+    // }, [category])
 
     return (
-        <>   
-        <div id="carrousel"  sx={{ padding: 5 }} >
-            <br />
-            <div id="titlenovedades">
-                NOVEDADES
-            </div>
-            <ItemListCarrousel items={items} loading={loading} />
+        <div style={{ marginLeft: "5%" }}>
+            <ItemList items={items} loading={loading} />
         </div>
-        </>
     )
 }
 

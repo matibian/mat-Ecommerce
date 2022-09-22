@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function ItemCarrousel({ item }) {
-    const { name, img, price,id, stock  } = item
+    const { name, img, price, id, stock } = item
     const navigate = useNavigate()
     const { addItem } = useCart()
 
@@ -31,31 +31,32 @@ export default function ItemCarrousel({ item }) {
                     component="img"
                     height="75"
                     width="90%"
+                    sx={{ objectFit: "scale-down" }}
                     image={img}
                     alt="img"
-                    
+
                 />
                 <CardContent padding="5px">
-                    <Typography variant="body2" color="text.secondary"  sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
+                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
                         {name}
                     </Typography>
                     <Typography gutterBottom variant="h6" component="div" marginBottom="0px">
                         ${price.toLocaleString('de-DE')}
                     </Typography>
                 </CardContent>
-                <CardContent sx={{positition: "relative", bottom: "25px"}} >
+                <CardContent sx={{ positition: "relative", bottom: "25px" }} >
                     <Button variant="contained"
-                        sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", backgroundColor: "rgb(36 24 64)"}}
-                        onClick={()=>navigate(`/detail/${id}`)}
-                        >
+                        sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", backgroundColor: "rgb(36 24 64)" }}
+                        onClick={() => navigate(`/detail/${id}`)}
+                    >
                         Detalles
                     </Button>
-                    
-                    <IconButton 
-                        color="primary" 
+
+                    <IconButton
+                        color="primary"
                         aria-label="add to shopping cart"
                         onClick={onAdd}
-                        >
+                    >
                         <AddShoppingCartIcon sx={{ color: "rgb(36 24 64)", paddingTop: "2px" }} />
                     </IconButton>
                 </CardContent>

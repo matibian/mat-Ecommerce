@@ -12,7 +12,9 @@ export default function ItemCount({ stock, inicial, onAdd, count, setCount }) {
     return (
         <div style={{ flexDirection: 'column', alignItems: 'center', display: 'flex' }}>            <CardActions>
             <Stack direction="row" spacing={1} sx={{ paddingTop: "2px" }}>
-                <Button variant="outlined"
+                <Button 
+                    variant="outlined"
+                    color="secondary"
                     onClick={() => setCount(count + 1)}
                     disabled={count === stock}
                     padding="0 0">
@@ -21,7 +23,9 @@ export default function ItemCount({ stock, inicial, onAdd, count, setCount }) {
                 <Box style={{ fontSize: 22 }} >
                     {count}
                 </Box>
-                <Button variant="outlined"
+                <Button 
+                    variant="outlined"
+                    color="secondary"
                     onClick={() => setCount(count - 1)}
                     disabled={count === inicial} >
                     <RemoveIcon />
@@ -29,7 +33,8 @@ export default function ItemCount({ stock, inicial, onAdd, count, setCount }) {
             </Stack>
         </CardActions>
             <Button variant="contained"
-                sx={{ width: "95%", fontSize: "12px", paddingBottom: "2px" }}
+                sx={{ width: "95%", fontSize: "10px", paddingBottom: "2px", color: "white" }}
+                color="secondary"
                 disabled={count === 0}
                 onClick={onAdd}>
                 Agregar al carrito

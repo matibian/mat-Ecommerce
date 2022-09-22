@@ -1,40 +1,53 @@
 import './App.css';
-import React, { useState, createContext } from 'react';
+import React, { createContext } from 'react';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import ItemListContainerCarrousel from './components/carrousel/ItemListContainerCarrousel';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemListContainerGrid from './components/Grid/ItemListContainerGrid';
+import ItemListContainer from './components/Grid/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import { CartProvider } from './context/CartContext';
 import Home from './components/Home';
 import Cart from './components/Cart/Cart';
-// import FetchContainer from './test/FetchContainer';
+import CheckOut from './components/CheckOut';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+
 
 
 
 export const contexto = createContext();
 
+const theme = createTheme({
+  palette: {
+    secondary: {
+      main: 'rgb(36 24 64)'
+    }
+  }
+});
+
 export default function App() {
 
   return (
-  <CartProvider >
-    <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<><Home/><ItemListContainerCarrousel/></>} />
-          <Route path='/category/all' element={<ItemListContainerGrid />} />
-          {/* <Route path='/' element={<ItemListContainerCarrousel/>} /> */}
-          <Route path='/detail/:id' element={<ItemDetailContainer />} />
-          <Route path='/category/:category' element={<ItemListContainerGrid/>} />
-          <Route path='/cart' element={<Cart/>}/>
+    <CartProvider >
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<><Home /><ItemListContainerCarrousel /></>} />
+            <Route path='/category/all' element={<ItemListContainer />} />
+            {/* <Route path='/' element={<ItemListContainerCarrousel/>} /> */}
+            <Route path='/detail/:id' element={<ItemDetailContainer />} />
+            <Route path='/category/:category' element={<ItemListContainer />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<CheckOut />} />
 
 
-        </Routes>
+          </Routes>
 
-        {/* <ItemListContainerCarrousel sx={{ padding: 5 }} /> */}
-        <Footer />
-      </BrowserRouter>
+          {/* <ItemListContainerCarrousel sx={{ padding: 5 }} /> */}
+          <Footer />
+        </BrowserRouter>
+      </ThemeProvider>
     </CartProvider>
 
 

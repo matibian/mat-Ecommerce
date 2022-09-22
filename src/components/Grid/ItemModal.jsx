@@ -33,6 +33,7 @@ export default function ItemModal(props) {
                     <CardMedia
                         component="img"
                         height="200"
+                        sx={{objectFit:"scale-down"}}
                         width="40vw"
                         image={img}
                         alt="img"

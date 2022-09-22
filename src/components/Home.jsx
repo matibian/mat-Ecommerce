@@ -11,12 +11,12 @@ export default function Home() {
             <div id="homepic">
                 <div id="home">
                     <h1>
-                        <span class="titlehome">
+                        <span className="titlehome">
                             AliArg
                         </span>
                     </h1>
                     <h2>
-                        <span class="titlehome">
+                        <span className="titlehome">
                             ENCONTRA TODA LA GAMA DE COMPUTADORAS GAMING
                         </span>
                     </h2>
@@ -31,7 +31,7 @@ export default function Home() {
                         SHOP
                     </Button>
                     <h3>
-                        <span class="titlehome">
+                        <span className="titlehome">
                             Enfocados en rendimiento, estilo y comodidad
                         </span>
                     </h3>

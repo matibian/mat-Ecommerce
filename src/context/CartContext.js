@@ -7,6 +7,8 @@ export const CartProvider = ({ children }) => {
 
 
     const [cart, setCart] = useState([]);
+    const [envio, setEnvio] = useState(0);
+
     const addItem = (item) => {
         const existInCart = cart.find((prod) => prod.id === item.id)
         if (existInCart) {
@@ -42,8 +44,13 @@ export const CartProvider = ({ children }) => {
 
     const cartTotal = () => {
         return cart.reduce((acum, prod) => acum += prod.price*prod.quantity, 0)
-
     }
+
+    const delivery = (add) => {
+        console.log(add)
+        return setEnvio(add)
+    }
+
     const sumItem = (item) => {
     const updateItem = cart.map((prod) => {
         if (prod.id === item.id && prod.quantity<item.stock) {
@@ -62,12 +69,14 @@ export const CartProvider = ({ children }) => {
             } else {
                 return prod
             }
+            
         })
         setCart(updateItem)
+        console.log(cart)
         }  
 
     return (
-        <CartContext.Provider value={{ cart, clear, removeItem, isInCart, sumItem, reduceItem, addItem, cartTotal, cartQuantity }}>
+        <CartContext.Provider value={{ cart, clear, envio, delivery, removeItem, isInCart, sumItem, reduceItem, addItem, cartTotal, cartQuantity }}>
             {children}
         </CartContext.Provider>
     )

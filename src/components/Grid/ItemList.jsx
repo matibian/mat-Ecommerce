@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemGrid from './ItemGrid'
+import Item from './Item'
 import 'react-multi-carousel/lib/styles.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -10,7 +10,7 @@ import Stack from '@mui/material/Stack';
 
 
 
-export default function ItemListGrid({ items, loading }) {
+export default function ItemList({ items, loading }) {
 
 
 
@@ -21,7 +21,7 @@ export default function ItemListGrid({ items, loading }) {
 
         <div>
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+                <Grid container rowSpacing={2} columnSpacing={{ xs: 0.5, sm: 0.5, md: 0.5 }} sx={{padding: "5vh 5vw"}} >
                     {loading ?
                         skeletonItem.map((item) => (
                             <Grid item xs={3} key={item}>
@@ -31,7 +31,7 @@ export default function ItemListGrid({ items, loading }) {
                         :
                         items.map((item) => (
                             <Grid item xs={12} sm={6} md={3} key={item.id} padding="0 1vw">
-                                <ItemGrid item={item}  />
+                                <Item item={item}  />
                             </Grid>
                         ))}
                 </Grid>

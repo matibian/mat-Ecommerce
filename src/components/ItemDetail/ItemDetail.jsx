@@ -91,7 +91,7 @@ export default function ItemDetail({ productDetail, loading }) {
                   <CardMedia
                     component="img"
                     style={{
-                      // maxHeigth: "fit"
+                      objectFit: "scale-down",
                       maxHeight: "30vh"
 
                     }}
@@ -113,33 +113,36 @@ export default function ItemDetail({ productDetail, loading }) {
                   </CardContent>
                   <CardContent sx={{ positition: "relative", bottom: "25px", textAlign: "-webkit-center" }} >
                     <Rating name="read-only" value={stars} readOnly precision={0.5} />
-                    <br />
-                    <br />
                     <div
                       style={{
                         width: "30vh",
                         display: "flex"
                       }}>
                     </div>
-                <Box sx= {{width: "17vh"}}>
-                  {!buy
-                    ? <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} count={count} setCount={setCount} />
-                    : <>
-                      <Button variant="contained"
-                        onClick={() => navigate(`/cart`)}
-                        sx={{ width: "100%", height: "40px", fontSize: "12px", margin: "10px" }}
-                      >
-                        Ir al carrito
-                      </Button>
-                      <Button
-                        onClick={() => navigate(`/category/all`)}
-                        variant="contained"
-                        sx={{ width: "100%", height: "40px", fontSize: "12px", margin: "10px" }}
-                      >
-                        Seguir comprando
-                      </Button>
-                    </>}
-                </Box>
+                    <Box
+                    // sx= {{width: "17vh"}}
+                    >
+                      {!buy
+                        ? <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} count={count} setCount={setCount} />
+                        : <>
+                          <Button
+                            variant="contained"
+                            color="secondary"
+                            onClick={() => navigate(`/cart`)}
+                            sx={{ width: "100%", color: "white", height: "40px", fontSize: "12px", margin: "10px" }}
+                          >
+                            Ir al carrito
+                          </Button>
+                          <Button
+                            onClick={() => navigate(`/category/all`)}
+                            color="secondary"
+                            variant="contained"
+                            sx={{ width: "100%", color: "white", height: "40px", fontSize: "12px", margin: "10px" }}
+                          >
+                            Seguir comprando
+                          </Button>
+                        </>}
+                    </Box>
                   </CardContent>
                 </Grid>
 

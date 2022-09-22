@@ -7,11 +7,12 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Button, IconButton } from '@mui/material';
 import ItemModal from './ItemModal.jsx';
 import { useCart } from '../../context/CartContext.js';
+import { Box } from '@mui/system';
 
 
 
 export default function ItemGrid({ item }) {
-    const { name, img, price,id, stock  } = item
+    const { name, img, price, id, stock } = item
     const [buttonPopup, setButtonPopup] = useState(false)
     const [itemModal, setItemModal] = useState()
     const { addItem } = useCart()
@@ -34,13 +35,15 @@ export default function ItemGrid({ item }) {
         <>
             <Card sx={{ width: 220, height: 250 }}>
                 <>
-                    <CardMedia
-                        component="img"
-                        height="115"
-                        width="90%"
-                        image={img}
-                        alt="img"
-                    />
+                    <Box sx={{height: "125px"}}>
+                        <CardMedia
+                            component="img"
+                            height="125"
+                            sx={{objectFit:"scale-down"}}
+                            image={img}
+                            alt="img"
+                        />
+                    </Box>
                     <CardContent padding="5px">
                         <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
                             {name}
@@ -53,7 +56,8 @@ export default function ItemGrid({ item }) {
                         <Button
                             onClick={() => handleClick()}
                             variant="contained"
-                            sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", backgroundColor: "rgb(36 24 64)" }}
+                            color="secondary"
+                            sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", color: "white"}}
 
                         >
                             Detalles
@@ -62,11 +66,11 @@ export default function ItemGrid({ item }) {
                             trigger={buttonPopup}
                             setTrigger={setButtonPopup}
                             item={{ ...itemModal }} />
-                        <IconButton 
-                            color="primary" 
+                        <IconButton
+                            color="primary"
                             aria-label="add to shopping cart"
                             onClick={onAdd}
-                            >
+                        >
                             <AddShoppingCartIcon sx={{ color: "rgb(36 24 64)", paddingTop: "2px" }} />
                         </IconButton>
                     </CardContent>
