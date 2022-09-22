@@ -49,7 +49,7 @@ export default function ItemListContainer() {
     // }, [category])
 
     return (
-        <div style={{ marginLeft: "5%" }}>
+        <div style={{ marginLeft: "5%", height: "70vh", overflowY: "scroll" }}>
             <ItemList items={items} loading={loading} />
         </div>
     )

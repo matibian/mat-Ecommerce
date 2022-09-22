@@ -50,12 +50,14 @@ export default function CheckOut() {
 
                 <Paper elevation={3}>
 
-                    <Grid sx={{ padding: '10vh 10vh' }}>
+                    <Grid sx={{ padding: '5vh 10vh' }}>
                         {!send
                             ?
                             <>
+                                <Typography variant="body2" color="text.primary" sx={{ fontSize: 25, fontWeight: "bold", paddingBottom: "4vh" }} >
+                                    Checkout
+                                </Typography>
                                 <Box sx={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
-
                                     <AccountCircle sx={{ color: 'rgb(36 24 64)', mr: 1, my: 0.5 }} />
                                     <TextField color="secondary" id="input-with-sx" label="Nombre y apellido" variant="standard" value={nombre} onChange={(e) => setNombre(e.target.value)} type="text" />
                                 </Box>

@@ -195,7 +195,7 @@ export default function Cart() {
                                             </div>
 
                                             <MDBBtn color="dark" block size="lg" onClick={() => navigate(`/checkout`)}>
-                                                Pagar
+                                                Ir al checkout
                                             </MDBBtn>
                                             
                                         </div>
