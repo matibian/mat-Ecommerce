@@ -15,7 +15,7 @@ export default function CheckOut() {
     const [email, setEmail] = useState("")
     const [nombre, setNombre] = useState("")
     const [tel, setTel] = useState("")
-    const { cart, cartTotal, envio } = useCart();
+    const { cart, cartTotal, envio, clear } = useCart();
     const navigate = useNavigate()
     const [send, setSend] = useState(false)
 
@@ -30,6 +30,7 @@ export default function CheckOut() {
             ],
             total: Number(cartTotal() + envio)
         };
+        clear()
         console.log(order)
         setSend(true)
     }
