@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "818382464c5c9eee47ee",
+    "revision": "032e88a620675e90a848",
     "url": "/mat-Ecommerce/static/css/main.b858d7f6.chunk.css"
   },
   {
-    "revision": "818382464c5c9eee47ee",
-    "url": "/mat-Ecommerce/static/js/main.81838246.chunk.js"
+    "revision": "032e88a620675e90a848",
+    "url": "/mat-Ecommerce/static/js/main.032e88a6.chunk.js"
   },
   {
     "revision": "e0951f3e1edda8b7f479",
     "url": "/mat-Ecommerce/static/js/1.e0951f3e.chunk.js"
   },
   {
-    "revision": "86c207c9e354447b962b",
+    "revision": "49566ad4296342b06305",
     "url": "/mat-Ecommerce/static/css/2.36224b3c.chunk.css"
   },
   {
-    "revision": "86c207c9e354447b962b",
-    "url": "/mat-Ecommerce/static/js/2.86c207c9.chunk.js"
+    "revision": "49566ad4296342b06305",
+    "url": "/mat-Ecommerce/static/js/2.49566ad4.chunk.js"
   },
   {
     "revision": "6cfba936160fd5b23fed",
@@ -32,12 +32,12 @@ self.__precacheManifest = [
     "url": "/mat-Ecommerce/static/media/revicons.04eb8fc5.woff"
   },
   {
-    "revision": "17629a5dfe0d3c3946cf401e1895f091",
-    "url": "/mat-Ecommerce/static/media/revicons.17629a5d.ttf"
-  },
-  {
     "revision": "2feb69ccb596730c72920c6ba3e37ef8",
     "url": "/mat-Ecommerce/static/media/revicons.2feb69cc.eot"
+  },
+  {
+    "revision": "17629a5dfe0d3c3946cf401e1895f091",
+    "url": "/mat-Ecommerce/static/media/revicons.17629a5d.ttf"
   },
   {
     "revision": "25e425db8efe1c900689102357f66f7b",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/mat-Ecommerce/static/media/logo.03fded62.png"
   },
   {
-    "revision": "3c5c81c2eedf54c6b100dc5e74f92451",
+    "revision": "37d5106b4612ea0da39315210d1ea6e3",
     "url": "/mat-Ecommerce/index.html"
   }
 ];
