@@ -92,7 +92,7 @@ export default function Cart() {
                                                         </MDBTypography>
                                                     </MDBCol>
                                                     <MDBCol md="1" lg="1" xl="1" className="text-end">
-                                                        <a href="#!" className="text-muted">
+                                                        <a className="text-muted">
                                                             <MDBIcon 
                                                             fas icon="times"
                                                             onClick={()=>removeItem(item.id)} 
