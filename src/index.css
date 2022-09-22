@@ -10,7 +10,7 @@ body {
   background:#D7D6DE;
   text-align: center;
   background-image: url("https://i.ibb.co/tMMcd10/chip.png");
-  background-size: 100vw;
+  background-size: cover;
   background-position: -30% fixed;
 }
 

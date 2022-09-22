@@ -82,7 +82,7 @@ export default function CheckOut() {
                                 </Button>
                             </>
                             :
-                            <>
+                            <Grid sx={{ padding: '10vh 0' }}>
                                 <Typography variant="body2" color="text.primary" sx={{ fontSize: 25, fontWeight: "bold", padding: "5px" }} >
                                     Su pedido esta siendo procesado
                                 </Typography>
@@ -98,7 +98,7 @@ export default function CheckOut() {
                                 /> */}
                                 <br />
                                 <img src={logo} alt="logo" width={100} height={75} />
-                            </>
+                            </Grid>
                         }
                     </Grid>
                 </Paper>
