@@ -36,12 +36,20 @@ export default function ItemDetail({ productDetail, loading }) {
   const [buy, setBuy] = useState(false);
   const { img, price, description, stars, name, stock, inicial, more, id } = productDetail;
   const navigate = useNavigate()
-  const { addItem } = useCart()
+  const { cart, addItem } = useCart()
 
-  const [toastState, setToastState] = useState(false);
+  const [snackBar, setSnackbarState] = useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'right',
+  });
+
+  const { vertical, horizontal, open } = snackBar;
+
+
 
   const handleClose = () => {
-    setToastState({ ...toastState, open: false });
+    setSnackbarState({ ...snackBar, open: false });
   };
 
 
@@ -49,13 +57,25 @@ export default function ItemDetail({ productDetail, loading }) {
     let purchase = {
       id, name, price, stock, img, quantity: count
     }
-    setToastState(true)
+    setSnackbarState({ ...snackBar, open: true});
     setBuy(true);
     addItem(purchase)
   }
 
+  const stockLimit = () => {
 
+    const found = cart.find((prod) => prod.id === id)
+    if (found){
+      return (found.stock - found.quantity)
+    }
+    else {
+      
+      return stock
 
+    }
+  }
+
+  console.log(stockLimit())
 
 
 
@@ -132,7 +152,7 @@ export default function ItemDetail({ productDetail, loading }) {
                       {!buy
                         ?
                         <>
-                          <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} count={count} setCount={setCount} />
+                          <ItemCount stockLimit={stockLimit()} inicial={inicial} onAdd={onAdd} count={count} setCount={setCount} />
 
                         </>
                         : <>
@@ -158,10 +178,10 @@ export default function ItemDetail({ productDetail, loading }) {
                   </CardContent>
                 </Grid>
                 <Snackbar
-                  anchorOrigin={{ vertical:"top", horizontal:"right" }}
-                  open={toastState}
+                  anchorOrigin={{ vertical, horizontal}}
+                  open={open}
                   onClose={handleClose}
-                  autoHideDuration={1000}
+                  autoHideDuration={2000}
                   message={`Agregaste ${count} producto/s al carrito`}
                   // key={vertical + horizontal}
                 />
