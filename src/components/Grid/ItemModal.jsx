@@ -44,7 +44,7 @@ export default function ItemModal(props) {
                         <Typography variant="body2" color="text.primary" sx={{ fontSize: 16, fontWeight: "bold", padding: "5px" }} >
                             {name}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
+                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px", textAlign: "justify" }} >
                             {description}
                         </Typography>
                         <Typography gutterBottom variant="h6" component="div" marginBottom="0px">

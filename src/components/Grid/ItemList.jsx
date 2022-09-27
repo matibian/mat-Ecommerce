@@ -4,9 +4,6 @@ import 'react-multi-carousel/lib/styles.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import EsqueletoGrid from './EsqueletoGrid';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-
 
 
 
@@ -20,8 +17,8 @@ export default function ItemList({ items, loading }) {
     return (
 
         <div>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container rowSpacing={2} columnSpacing={{ xs: 0.5, sm: 0.5, md: 0.5 }} sx={{padding: "5vh 5vw"}} >
+            <Box sx={{ flexGrow: 1}}>
+                <Grid container rowSpacing={2} columnSpacing={{ xs: 0.5, sm: 0.5, md: 0.5 }} sx={{padding: "5vh 5vw", textAlign: "-webkit-center"}} >
                     {loading ?
                         skeletonItem.map((item) => (
                             <Grid item xs={3} key={item}>

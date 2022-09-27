@@ -1,8 +1,7 @@
 import { AccountCircle } from '@mui/icons-material';
-import { Button, CardMedia, Grid, Paper, TextField, Typography } from '@mui/material';
+import { Button, Grid, Paper, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import SendIcon from '@mui/icons-material/Send';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
@@ -16,7 +15,6 @@ export default function CheckOut() {
     const [nombre, setNombre] = useState("")
     const [tel, setTel] = useState("")
     const { cart, cartTotal, envio, clear } = useCart();
-    const navigate = useNavigate()
     const [send, setSend] = useState(false)
 
 

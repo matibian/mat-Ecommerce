@@ -33,19 +33,19 @@ export default function ItemGrid({ item }) {
 
     return (
         <>
-            <Card sx={{ width: 220, height: 250 }}>
+            <Card sx={{ width: 220, height: 215 }}>
                 <>
-                    <Box sx={{height: "125px"}}>
+                    <Box sx={{height: "110px"}}>
                         <CardMedia
                             component="img"
-                            height="125"
+                            height="110"
                             sx={{objectFit:"scale-down"}}
                             image={img}
                             alt="img"
                         />
                     </Box>
-                    <CardContent padding="5px">
-                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
+                    <CardContent padding="0 5px">
+                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "0 5px" }} >
                             {name}
                         </Typography>
                         <Typography gutterBottom variant="h6" component="div" marginBottom="0px">

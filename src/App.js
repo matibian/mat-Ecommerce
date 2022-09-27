@@ -3,14 +3,14 @@ import React, { createContext } from 'react';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import ItemListContainerCarrousel from './components/carrousel/ItemListContainerCarrousel';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import ItemListContainer from './components/Grid/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import { CartProvider } from './context/CartContext';
 import Home from './components/Home';
 import Cart from './components/Cart/Cart';
 import CheckOut from './components/CheckOut';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 

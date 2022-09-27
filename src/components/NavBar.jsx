@@ -7,9 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
 import Icono from './Icono';
@@ -22,44 +20,22 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-
-
-
-const pages = ['Productos', 'Soporte', 'Contactanos'];
-const settings = ['Perfil', 'Cuenta', 'Carrito', 'Logout'];
-
-
-
 export default function NavBar() {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const navigate = useNavigate()
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -116,7 +92,6 @@ export default function NavBar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
             className="titlealiarg"
             sx={{
               mr: 2,
@@ -175,11 +150,11 @@ export default function NavBar() {
               </MenuItem>
 
             </Menu>
-          </Box>
           <Link to="/">
             <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           </Link>
-          <Link to="/">
+          </Box>
+          {/* <Link to="/">
           <Typography
             className="titlealiarg"
             variant="h5"
@@ -196,9 +171,9 @@ export default function NavBar() {
               textDecoration: 'none',
             }}
           >
-            ALIARG
+            ALIARG2
           </Typography>
-          </Link>
+          </Link> */}
 
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -235,7 +210,7 @@ export default function NavBar() {
           </Search>
 
           <Box sx={{ display: 'flex', flexGrow: 0, paddingLeft: 2 }}>
-            <Tooltip title="Open settings">
+            {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
@@ -261,7 +236,7 @@ export default function NavBar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
             <Box>
               <Icono />
             </Box>

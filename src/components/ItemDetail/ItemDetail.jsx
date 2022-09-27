@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
-import { Button } from '@mui/material';
+import { Button, Snackbar } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import ItemCount from '../ItemCount';
 import { useState } from 'react';
@@ -14,8 +14,6 @@ import { useCart } from '../../context/CartContext';
 import Divider from '@mui/material/Divider';
 
 import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 
 import { styled } from '@mui/material/styles';
 
@@ -40,11 +38,18 @@ export default function ItemDetail({ productDetail, loading }) {
   const navigate = useNavigate()
   const { addItem } = useCart()
 
+  const [toastState, setToastState] = useState(false);
+
+  const handleClose = () => {
+    setToastState({ ...toastState, open: false });
+  };
+
 
   const onAdd = () => {
     let purchase = {
       id, name, price, stock, img, quantity: count
     }
+    setToastState(true)
     setBuy(true);
     addItem(purchase)
   }
@@ -54,12 +59,14 @@ export default function ItemDetail({ productDetail, loading }) {
 
 
 
+
   return (
     <div >
+
+
       <Box
         sx={{
           display: 'flex',
-          marginLeft: "2%",
           flexWrap: 'wrap',
           justifyContent: "space-evenly",
 
@@ -85,7 +92,7 @@ export default function ItemDetail({ productDetail, loading }) {
             <LoadingButton loading sx={{ width: 200, height: 290 }} />
             :
             <>
-              <Grid container spacing={5}>
+              <Grid container spacing={5} style={{ justifyContent: "center" }}>
                 <Grid item xs={6} md={6}
                 >
                   <CardMedia
@@ -99,12 +106,12 @@ export default function ItemDetail({ productDetail, loading }) {
                     alt="img"
                   />
                 </Grid>
-                <Grid item xs={6} md={6} style={{ alignItems: 'center' }} >
+                <Grid item xs={12} md={6} style={{ alignItems: 'center' }} >
                   <CardContent>
                     <Typography variant="body2" color="text.primary" sx={{ fontSize: 16, fontWeight: "bold", padding: "5px" }} >
                       {name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
+                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px", textAlign: "justify" }} >
                       {description}
                     </Typography>
                     <Typography gutterBottom variant="h6" component="div" marginBottom="0px">
@@ -123,7 +130,11 @@ export default function ItemDetail({ productDetail, loading }) {
                     // sx= {{width: "17vh"}}
                     >
                       {!buy
-                        ? <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} count={count} setCount={setCount} />
+                        ?
+                        <>
+                          <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} count={count} setCount={setCount} />
+
+                        </>
                         : <>
                           <Button
                             variant="contained"
@@ -133,6 +144,7 @@ export default function ItemDetail({ productDetail, loading }) {
                           >
                             Ir al carrito
                           </Button>
+
                           <Button
                             onClick={() => navigate(`/category/all`)}
                             color="secondary"
@@ -145,12 +157,19 @@ export default function ItemDetail({ productDetail, loading }) {
                     </Box>
                   </CardContent>
                 </Grid>
-
+                <Snackbar
+                  anchorOrigin={{ vertical:"top", horizontal:"right" }}
+                  open={toastState}
+                  onClose={handleClose}
+                  autoHideDuration={1000}
+                  message={`Agregaste ${count} producto/s al carrito`}
+                  // key={vertical + horizontal}
+                />
 
                 <Root>
                   <Divider textAlign="left">Detalles</Divider>
                 </Root>
-                <Typography variant="body2" color="text.primary" sx={{ fontSize: 14, padding: "5vh" }} >
+                <Typography variant="body2" color="text.primary" sx={{ fontSize: 14, padding: "5vh", textAlign: "justify" }} >
                   {more}
                 </Typography>
               </Grid>

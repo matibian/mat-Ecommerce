@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 export default function EsqueletoGrid() {
     return (
-        <Card sx={{ width: 220, height: 250 }}>
+        <Card sx={{ width: 220, height: 215 }}>
             <Skeleton variant="rectangular" width={"cover"} height={115} />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">

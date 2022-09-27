@@ -12,7 +12,7 @@ import {
     MDBRow,
     MDBTypography,
 } from "mdb-react-ui-kit";
-import React, {useState} from 'react';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useCart } from '../../context/CartContext';
 
@@ -92,12 +92,14 @@ export default function Cart() {
                                                         </MDBTypography>
                                                     </MDBCol>
                                                     <MDBCol md="1" lg="1" xl="1" className="text-end">
-                                                        <a className="text-muted">
+                                                        {/* <a className="text-muted"> */}
+                                                            <MDBBtn tag='a' color='none' className='m-1'>
                                                             <MDBIcon 
                                                             fas icon="times"
                                                             onClick={()=>removeItem(item.id)} 
                                                             />
-                                                        </a>
+                                                            </MDBBtn>
+                                                        {/* </a> */}
                                                     </MDBCol>
                                                 </MDBRow>
 

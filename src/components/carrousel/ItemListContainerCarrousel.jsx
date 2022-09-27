@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ItemListCarrousel from './ItemListCarrousel';
-import { data } from '../mock/Api';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 
@@ -23,7 +22,6 @@ export default function ItemListContainerCarrousel() {
                     }
                 })
                 setItems(list)
-                console.log(list)
             })
             .catch((err) => console.log(err))
             .finally(() => setLoading(false))
@@ -31,13 +29,6 @@ export default function ItemListContainerCarrousel() {
     }, [])
 
 
-
-    // useEffect(() => {
-    //     data
-    //         .then((res) => setItems(res))
-    //         .catch((err) => console.log(err))
-    //         .finally(() => setLoading(false))
-    // }, [])
 
     return (
         <>   

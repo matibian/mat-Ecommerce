@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ItemDetail from './ItemDetail'
-import { data } from '../mock/Api';
 import { useParams } from 'react-router-dom';
 import { db } from '../../firebase/firebase';
 import { collection, doc, getDoc } from 'firebase/firestore';
@@ -29,15 +28,6 @@ export default function ItemDetailContainer() {
       .finally(() => setLoading(false))
   }, [id])
 
-
-
-
-  // useEffect(() => {
-  //   data
-  //     .then((res) => setProductDetail(res.find((item) => item.id === id)))
-  //     .catch(() => console.log("error"))
-  //     .finally(() => setLoading(false))
-  // }, [id])
 
 
   return (
