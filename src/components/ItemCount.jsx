@@ -12,37 +12,39 @@ export default function ItemCount({ stockLimit, stock, inicial, onAdd, count, se
 
 
     return (
-        <div style={{ flexDirection: 'column', alignItems: 'center', display: 'flex' }}>            <CardActions>
-            <Stack direction="row" spacing={1} sx={{ paddingTop: "2px" }}>
-                <Button
-                    variant="outlined"
-                    color="secondary"
-                    onClick={() => setCount(count + 1)}
-                    disabled={count === stockLimit || stockLimit === 0 || count === stock}
-                    padding="0 0">
-                    <AddIcon />
-                </Button>
-                <Box style={{ fontSize: 22 }} >
-                    {stockLimit === 0 ? 0 : count}
-                </Box>
-                <Button
-                    variant="outlined"
-                    color="secondary"
-                    onClick={() => setCount(count - 1)}
-                    disabled={count === inicial} >
-                    <RemoveIcon />
-                </Button>
-            </Stack>
-        </CardActions>
-            <Tooltip title="Alcanzaste el limite de stock" disableHoverListener={stockLimit !== 0}  followCursor>
+        <div style={{ flexDirection: 'column', alignItems: 'center', display: 'flex' }}>
+
+            <CardActions>
+                <Stack direction="row" spacing={1} sx={{ paddingTop: "2px" }}>
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        onClick={() => setCount(count + 1)}
+                        disabled={count === stockLimit || stockLimit === 0 || count === stock}
+                        padding="0 0">
+                        <AddIcon />
+                    </Button>
+                    <Box style={{ fontSize: 22 }} >
+                        {stockLimit === 0 ? 0 : count}
+                    </Box>
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        onClick={() => setCount(count - 1)}
+                        disabled={count === inicial} >
+                        <RemoveIcon />
+                    </Button>
+                </Stack>
+            </CardActions>
+            <Tooltip title="Alcanzaste el limite de stock" disableHoverListener={stockLimit !== 0} followCursor>
                 <span>
-                <Button variant="contained"
-                    sx={{ width: "95%", fontSize: "10px", paddingBottom: "2px", color: "white" }}
-                    color="secondary"
-                    disabled={count === 0 || stockLimit === 0}
-                    onClick={onAdd}>
-                    Agregar al carrito
-                </Button>
+                    <Button variant="contained"
+                        sx={{ width: "100%", fontSize: "10px", paddingBottom: "2px", color: "white" }}
+                        color="secondary"
+                        disabled={count === 0 || stockLimit === 0}
+                        onClick={onAdd}>
+                        Agregar al carrito
+                    </Button>
                 </span>
             </Tooltip>
         </div>

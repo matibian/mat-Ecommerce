@@ -10,7 +10,7 @@ import { CartProvider } from './context/CartContext';
 import Home from './components/Home';
 import Cart from './components/Cart/Cart';
 import CheckOut from './components/CheckOut';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 
@@ -30,7 +30,7 @@ export default function App() {
   return (
     <CartProvider >
       <ThemeProvider theme={theme}>
-        {/* <BrowserRouter> */}
+        <BrowserRouter>
           <NavBar />
           <Routes>
             <Route path='/' element={<><Home /><ItemListContainerCarrousel /></>} />
@@ -43,10 +43,8 @@ export default function App() {
 
 
           </Routes>
-
-          {/* <ItemListContainerCarrousel sx={{ padding: 5 }} /> */}
           <Footer />
-        {/* </BrowserRouter> */}
+        </BrowserRouter>
       </ThemeProvider>
     </CartProvider>
 

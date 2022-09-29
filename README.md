@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# E-commerce. Por Matías Bianchi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [![CSS](https://img.shields.io/badge/Link%20al%20sitio-blueviolet)](/)//cambiar
 
-## Available Scripts
 
-In the project directory, you can run:
+# [AliArg - App con React.js](https://ecommerce-react-smael.netlify.app/)
 
-### `npm start`
+## Frameworks , libraries y tools con sus versiones
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[![Node](https://img.shields.io/badge/node-%2016.14.2-success)](https://reactjs.org/blog/2020/10/20/react-v17.html)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![Node](https://img.shields.io/badge/npm-%208.5.0-success)](https://reactjs.org/blog/2020/10/20/react-v17.html)
 
-### `npm test`
+[![React](https://img.shields.io/badge/react-%2018.2.0-success)](https://reactjs.org/blog/2020/10/20/react-v17.html)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+[![React-Icons](https://img.shields.io/badge/react--icons-%5E5.8.4-success)](https://react-icons.github.io/react-icons/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![React-Router](https://img.shields.io/badge/react--router--dom-%5E6.4.0-success)](https://www.w3schools.com/react/react_router.asp)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[![Firebase](https://img.shields.io/badge/firebase-%5E8.9.1-success)](https://firebase.google.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[![JS](https://img.shields.io/badge/JavaScript-ES6-success)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-### `npm run eject`
+[![CSS](https://img.shields.io/badge/CSS-success)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## COMANDOS
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a new React app
+`npx create-react-app name`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Develop mode
+` npm start`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+React Router Dom
+`npm install react-router-dom`
 
-## Learn More
+React Icons
+`npm install react-icons --save`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Firebase v 8.9.1
+`npm install firebase@9.10.0`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+React-hook-form v 7.36.1
+`npm install react-hook-form`
 
-### Code Splitting
+React-multi-carousel v 2.8.2
+`npm install react-multi-carousel`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Deploy
+`npm run build`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Descripción
 
-### Making a Progressive Web App
+AliArg es un proyecyo ecommerce realizado en React.js de venta de productos informáticos. Los productos y la orden de compra con los pedidos se almacenan en firebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Categorías
 
-### Advanced Configuration
+La web consta de una página principal donde se puede ver una presentación y un link de "Shop" donde se ingresa a visualizar la totalidad de los productos. En la barra de navegación se puede elegir entre las cuatro categorías de productos para visualizar. Además se pueden buscar los productos en la barra de búsqueda del NavBar. El logo de Home lleva a la visualización de todos los productos 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Alt Text](https://i.postimg.cc/VvD2mMRp/AliArg1.gif)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Abajo de la presentación se puede ver un carrousel de productos correspondientes a los productos más nuevos. 
 
-### `npm run build` fails to minify
+![Alt Text](https://i.postimg.cc/Dyn1hRWh/AliArg2.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+### Items
+
+Cada card de productos muestra una imagen, el nombre del producto y tiene un botón que lleva a un modal que muestra una breve información y calificación del producto. El modal lleva a la pagina de descripcion del producto donde se puede agregar al carrito. Además la card de producto tiene un ícono desde el cual se puede agregarl al carro directamente. Todas las formas de agregar el producto cuentan con un control de stock y un cartel que muestra cuando se llega al límite.
+El id del producto es agregado automaticamente por firebase.
+
+### Carrito
+
+El carrito muestra la totalidad de los productos elegidos y dispone de un contador para agregar o quitar cantidades del producto. Tiene un máximo según stock del producto y cuando se disminuye a cero, el producto se elimina del carrito. Además tiene botones para borrar individualmente los productos y la totalidad.
+El carrito cuenta ademas con un select de opciones para sumar el valor del envío al total. 
+
+![Alt Text](https://i.postimg.cc/44WX4Fwt/Ali-Arg-Cart1.gif)
+
+### Formulario
+
+El formulario de generación de la orden consta con una validación completa, donde no se pueden dejar secciones vacías, introducir letras en el numero de telefono o numeros en los nombres. Además el mail debe si o si tener la estructura de un mail real para poder validarse. Todos los campos responden con un error si se introduce información inválida.
+
+Al introducir correctamente la información, se muestra un cartel de éxito en la compra con la id del pedido, otorgada automaticamente por firebase.
+
+![Alt Text](https://i.postimg.cc/28FH4Pb9/Ali-Arg-Form.gif)
+
+## Librerías utilizadas
+
+### React-multi-carousel v 2.8.2
+Añade la funcionalidad de carrousel de los productos de "Novedades". Se agrega un valor de true o false dentro de las propiedades de los productos para que aparezcan en dicha sección. 
+
+### Material UI v5
+Casi la totalidad del proyecto fue armada con las herramientas que brinda esta librería. Para lograr un estilo acabado y completo con coherencia a traves de toda la experiencia de navegación. 
+
+### Bootstrap v5.2
+El único espacio creado con esta librería es el carrito. Buscando ejemplos como inspiración para crear el propio del proyecto, encontré uno que me gustó mucho, pero tenía mucho trabajo para cambiarlo. Así que aproveché la oportunidad de probar y practicar tambien esta librería que ya había utilizado en otros proyectos anteriores pero que no eran de React. Intenté igualmente hacerlo de manera que no chocara mucho con el estilo del resto de la proyecto. 
+
+### React-hook-form v7.36.1
+Utilicé esta librería para darle un tipo de valoración más profesional al formulario de orden del carrito. 
+
+
+
+
+
+
+
+
+
+#### TO-DO
+
+| Funcionalidades             | descripción                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Login                       | Crear un login para verificar usuarios                                                               |
+| Stock                       | Reducir la cantidad de stock de la base de datos al concluir una compra |
+| Favoritos                   | Añadir una lista de favoritos generada por cada usuario. (Asociada al Login)                         |
+| 
+| 
+
+Creado por:
+
+[Matías Bianchi](www.linkedin.com/in/matiasbianchi
+)
+
+
+
+

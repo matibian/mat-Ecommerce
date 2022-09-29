@@ -1,17 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
 import { useLocalStorage } from "../useLocalStorage";
-import Snackbar from '@mui/material/Snackbar';
 
 export const CartContext = createContext();
 
 
 
 export const CartProvider = ({ children }) => {
-
-    
-
-
-
 
     const [cart, setCart] = useLocalStorage('cart', []);
     const [envio, setEnvio] = useState(0);

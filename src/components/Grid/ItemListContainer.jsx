@@ -21,7 +21,6 @@ export default function ItemListContainer() {
                     return {
                         id: product.id,
                         ...product.data()
-
                     }
                 })
                 setItems(list)

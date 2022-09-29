@@ -33,14 +33,6 @@ export default function ItemList({ items, loading }) {
                         ))}
                 </Grid>
             </Box>
-            {/* <Stack spacing={2}>
-                <Pagination 
-                    count={10} 
-                    variant="outlined" 
-                    shape="rounded" showFirstButton showLastButton
-                    />
-            </Stack> */}
-
         </div>
     )
 }

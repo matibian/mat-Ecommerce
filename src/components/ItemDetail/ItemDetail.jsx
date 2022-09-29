@@ -46,12 +46,9 @@ export default function ItemDetail({ productDetail, loading }) {
 
   const { vertical, horizontal, open } = snackBar;
 
-
-
   const handleClose = () => {
     setSnackbarState({ ...snackBar, open: false });
   };
-
 
   const onAdd = () => {
     let purchase = {
@@ -69,27 +66,17 @@ export default function ItemDetail({ productDetail, loading }) {
       return (found.stock - found.quantity)
     }
     else {
-      
       return stock
-
     }
   }
 
-  console.log(stockLimit())
-
-
-
-
   return (
     <div >
-
-
       <Box
         sx={{
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: "space-evenly",
-
           '& > :not(style)': {
             m: 1,
             width: "60%",
@@ -101,7 +88,6 @@ export default function ItemDetail({ productDetail, loading }) {
           elevation={2}
           sx={{
             display: 'absolute',
-            //   flexWrap: 'wrap',
             '& > :not(style)': {
               m: 1,
               width: "95%",
@@ -120,7 +106,6 @@ export default function ItemDetail({ productDetail, loading }) {
                     style={{
                       objectFit: "scale-down",
                       maxHeight: "30vh"
-
                     }}
                     image={img}
                     alt="img"
@@ -146,9 +131,7 @@ export default function ItemDetail({ productDetail, loading }) {
                         display: "flex"
                       }}>
                     </div>
-                    <Box
-                    // sx= {{width: "17vh"}}
-                    >
+                    <Box>
                       {!buy
                         ?
                         <>
@@ -160,7 +143,7 @@ export default function ItemDetail({ productDetail, loading }) {
                             variant="contained"
                             color="secondary"
                             onClick={() => navigate(`/cart`)}
-                            sx={{ width: "100%", color: "white", height: "40px", fontSize: "12px", margin: "10px" }}
+                            sx={{ width: "80%", color: "white", height: "40px", fontSize: "12px", margin: "10px" }}
                           >
                             Ir al carrito
                           </Button>
@@ -169,7 +152,7 @@ export default function ItemDetail({ productDetail, loading }) {
                             onClick={() => navigate(`/category/all`)}
                             color="secondary"
                             variant="contained"
-                            sx={{ width: "100%", color: "white", height: "40px", fontSize: "12px", margin: "10px" }}
+                            sx={{ width: "80%", color: "white", height: "40px", fontSize: "12px", margin: "10px" }}
                           >
                             Seguir comprando
                           </Button>
@@ -183,7 +166,6 @@ export default function ItemDetail({ productDetail, loading }) {
                   onClose={handleClose}
                   autoHideDuration={2000}
                   message={`Agregaste ${count} producto/s al carrito`}
-                  // key={vertical + horizontal}
                 />
 
                 <Root>

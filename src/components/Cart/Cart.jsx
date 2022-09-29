@@ -51,11 +51,7 @@ export default function Cart() {
                                                     {cart.length} items
                                                 </MDBTypography>
                                             </div>
-
-                                            {
-                                            cart.length !== 0 ? cart.map((item) => (
-
-                                                // <CartItem item={item}/>
+                                            {cart.length !== 0 ? cart.map((item) => (
                                                 <div key={item.id}>
                                                 <hr className="my-4" />
                                                 <MDBRow className="mb-4 d-flex justify-content-between align-items-center">
@@ -72,43 +68,35 @@ export default function Cart() {
                                                             {item.name}
                                                         </MDBTypography>
                                                     </MDBCol>
-                                                    <MDBCol md="3" lg="3" xl="3" className="d-flex align-items-center">
+                                                    <MDBCol sm="4" md="3" lg="3" xl="3" className="d-flex align-items-center">
                                                         <MDBBtn color="link" className="px-2"
                                                             onClick={item.quantity=== 1? ()=>removeItem(item.id): () =>reduceItem(item)}>
                                                             <MDBIcon fas icon="minus" />
                                                         </MDBBtn>
-
                                                         <MDBInput type="number" min="0" max={item.stock} value={item.quantity} size="sm" />
-
                                                         <MDBBtn color="link" className="px-2"
                                                             onClick={() =>sumItem(item)}
                                                         >
                                                             <MDBIcon fas icon="plus" />
                                                         </MDBBtn>
                                                     </MDBCol>
-                                                    <MDBCol md="3" lg="2" xl="2" className="text-end">
+                                                    <MDBCol sm="4" md="3" lg="2" xl="2" className="text-end">
                                                         <MDBTypography tag="h6" className="mb-0">
                                                             ${(item.price*item.quantity).toLocaleString('de-DE')}
                                                         </MDBTypography>
                                                     </MDBCol>
-                                                    <MDBCol md="1" lg="1" xl="1" className="text-end">
-                                                        {/* <a className="text-muted"> */}
+                                                    <MDBCol sm="4" md="1" lg="1" xl="1" className="text-end">
                                                             <MDBBtn tag='a' color='none' className='m-1'>
                                                             <MDBIcon 
                                                             fas icon="times"
                                                             onClick={()=>removeItem(item.id)} 
                                                             />
                                                             </MDBBtn>
-                                                        {/* </a> */}
                                                     </MDBCol>
                                                 </MDBRow>
-
-                                            </div>
-                                            )
-                                            )
+                                            </div>))
                                                 :
                                                 <>
-
                                                     <CardMedia
                                                         component="img"
                                                         height="200"
@@ -122,11 +110,8 @@ export default function Cart() {
                                                         </Typography>
                                                     </CardContent>
                                                 </>
-
                                             }
-
                                             <hr className="my-4" />
-
                                             <div className="pt-5">
                                                 <MDBTypography tag="h6" className="mb-0">
                                                     <MDBCardText tag="a"
@@ -144,25 +129,18 @@ export default function Cart() {
                                             <MDBTypography tag="h3" className="fw-bold mb-5 mt-2 pt-1">
                                                 Total
                                             </MDBTypography>
-
                                             <hr className="my-4" />
-
                                             <div className="d-flex justify-content-between mb-4">
                                                 <MDBTypography tag="h5" className="text-uppercase">
                                                     items {cart.length}
                                                 </MDBTypography>
                                                 <MDBTypography tag="h5">
-
-
                                                     ${cartTotal(0).toLocaleString('de-DE')} subtotal
-
                                                 </MDBTypography>
                                             </div>
-
                                             <MDBTypography tag="h5" className="text-uppercase mb-3">
                                                 Envío
                                             </MDBTypography>
-
                                             <div className="mb-4 pb-2">
                                                 <select className="select p-2 rounded bg-grey" onChange={(choice) => delivery(Number(choice.target.value))} style={{ width: "100%" }}>
                                                     <option value="0">GBA - Gratis</option>
@@ -171,31 +149,24 @@ export default function Cart() {
                                                     <option value="3000">Resto de Argentina - $3000</option>
                                                 </select>
                                             </div>
-
                                             <MDBTypography tag="h5" className="text-uppercase mb-3">
                                                 Codigo de descuento
                                             </MDBTypography>
-
                                             <div className="mb-5">
                                                 <MDBInput size="lg" label="Ingresar codigo" />
                                             </div>
-
                                             <hr className="my-4" />
-
                                             <div className="d-flex justify-content-between mb-5">
                                                 <MDBTypography tag="h5" className="text-uppercase">
                                                     Total
                                                 </MDBTypography>
                                                 <MDBTypography tag="h5">$
-
                                                     {cartTotal()!== 0
                                                     ?
                                                     (cartTotal()+ envio).toLocaleString('de-DE')
                                                     : 0} total
-
                                                 </MDBTypography>
                                             </div>
-
                                             <MDBBtn color="dark" block size="lg" onClick={() => navigate(`/checkout`)}>
                                                 Ir al checkout
                                             </MDBBtn>
