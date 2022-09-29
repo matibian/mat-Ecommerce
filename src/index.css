@@ -65,6 +65,10 @@ code {
     padding-left: 34px;
 }
 
+.css-106c1u2-MuiBadge-badge{
+  background-color: rgb(174 27 212) !important
+}
+
 .css-aqutp7-MuiGrid-root{
   padding: 20px
 }
@@ -149,4 +153,17 @@ code {
   width: 100%;
   box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
   z-index: 10000;
+}
+
+
+#whatsapp:hover{
+  color: rgb(37, 211, 102)
+}
+
+#twitter:hover{
+  color: #1DA1F2
+}
+
+.fa-times:before, .fa-plus:before, .fa-minus:before{
+  color: rgb(79 36 113)
 }

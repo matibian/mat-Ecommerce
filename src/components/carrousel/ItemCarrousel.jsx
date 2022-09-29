@@ -42,9 +42,7 @@ export default function ItemCarrousel({ item }) {
             return (found.stock - found.quantity)
         }
         else {
-
             return stock
-
         }
     }
 
@@ -61,7 +59,6 @@ export default function ItemCarrousel({ item }) {
                     sx={{ objectFit: "scale-down" }}
                     image={img}
                     alt="img"
-
                 />
                 <CardContent padding="5px">
                     <Typography variant="body2" color="text.secondary" sx={{ fontSize: 12, fontWeight: "bold", padding: "5px" }} >
@@ -78,7 +75,6 @@ export default function ItemCarrousel({ item }) {
                     >
                         Detalles
                     </Button>
-
                     <Tooltip title="Alcanzaste el limite de stock" disableHoverListener={stockLimit() !== 0} followCursor>
                         <span>
                             <IconButton
@@ -98,13 +94,10 @@ export default function ItemCarrousel({ item }) {
                             </IconButton>
                         </span>
                     </Tooltip>
-
-
                 </CardContent>
                 <br />
                 <br />
             </>
-
         </Card>
     );
 

@@ -23,11 +23,9 @@ export default function Esqueleto() {
                     <Skeleton variant="rounded" width={70} height={40}  />
                     <Skeleton variant="rounded" width={70} height={40} />
                 </div>
-
             <CardContent>
                 <Skeleton variant="rounded" width={300} height={40}  />
             </CardContent>
         </Card>
-         
     );
 }

@@ -3,7 +3,6 @@ import ItemCarrousel from './ItemCarrousel'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Esqueleto from './Esqueleto';
-//import SkeletonCarousel from './SkeletonCarousel';
 
 
 
@@ -15,22 +14,21 @@ export default function ItemListCarrousel({ items,loading }) {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 7,
-            slidesToSlide: 4// optional, default to 1.
+            slidesToSlide: 4
         },
         tablet: {
             breakpoint: { max: 1024, min: 625 },
             items: 4,
-            slidesToSlide: 4 // optional, default to 1.
+            slidesToSlide: 4
         },
         mobile: {
             breakpoint: { max: 625, min: 0 },
             items: 2,
-            slidesToSlide: 2 // optional, default to 1.
+            slidesToSlide: 2
         }
     };
 
     const skeletonItem = [1,2,3,4,5,6,7]
-
 
     return (
 
@@ -42,7 +40,6 @@ export default function ItemListCarrousel({ items,loading }) {
                 containerClass="carousel-container"
                 itemClass="carousel-item-padding-40-px"
                 draggable={true}
-                // ssr={true}
             >
                 {loading ?
                 skeletonItem.map((item) => (

@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import { Button, Snackbar } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
-import ItemCount from '../ItemCount';
+import ItemCount from './ItemCount';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
@@ -143,7 +143,7 @@ export default function ItemDetail({ productDetail, loading }) {
                             variant="contained"
                             color="secondary"
                             onClick={() => navigate(`/cart`)}
-                            sx={{ width: "80%", color: "white", height: "40px", fontSize: "12px", margin: "10px" }}
+                            sx={{ width: "50%", color: "white", height: "30px", fontSize: "10px", margin: "10px" }}
                           >
                             Ir al carrito
                           </Button>
@@ -152,7 +152,7 @@ export default function ItemDetail({ productDetail, loading }) {
                             onClick={() => navigate(`/category/all`)}
                             color="secondary"
                             variant="contained"
-                            sx={{ width: "80%", color: "white", height: "40px", fontSize: "12px", margin: "10px" }}
+                            sx={{ width: "50%", color: "white", height: "30px", fontSize: "10px", margin: "10px" }}
                           >
                             Seguir comprando
                           </Button>

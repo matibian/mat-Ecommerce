@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import { db } from '../../firebase/firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
+import Error from './Error';
 
 export default function ItemListContainer() {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(false);
     const { category } = useParams()
+    const [error, setError] = useState(false);
 
 
     //firebase
@@ -25,7 +27,7 @@ export default function ItemListContainer() {
                 })
                 setItems(list)
             })
-            .catch((err) => console.log(err))
+            .catch((err) => setError(err))
             .finally(() => setLoading(false))
 
     }, [category])
@@ -34,7 +36,9 @@ export default function ItemListContainer() {
 
     return (
         <div style={{ height: "75vh", overflowY: "scroll" }}>
-            <ItemList items={items} loading={loading} />
+            {!error
+            ?<ItemList items={items} loading={loading} />
+            : <Error />}
         </div>
     )
 }

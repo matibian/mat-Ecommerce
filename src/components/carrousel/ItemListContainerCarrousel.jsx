@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import ItemListCarrousel from './ItemListCarrousel';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
+import Error from '../Grid/Error';
 
 export default function ItemListContainerCarrousel() {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
 
 
@@ -23,7 +25,7 @@ export default function ItemListContainerCarrousel() {
                 })
                 setItems(list)
             })
-            .catch((err) => console.log(err))
+            .catch((err) => setError(err))
             .finally(() => setLoading(false))
 
     }, [])
@@ -37,7 +39,11 @@ export default function ItemListContainerCarrousel() {
             <div id="titlenovedades">
                 NOVEDADES
             </div>
-            <ItemListCarrousel items={items} loading={loading} />
+            {!error
+            ?<ItemListCarrousel items={items} loading={loading} />
+            :<Error/>
+            }
+        
         </div>
         </>
     )

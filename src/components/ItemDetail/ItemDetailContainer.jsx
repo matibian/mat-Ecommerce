@@ -32,8 +32,8 @@ export default function ItemDetailContainer() {
 
   return (
     <>
-      <div>
-        <ItemDetail productDetail={productDetail} loading={loading} />
+      <div style={{ height: "73vh", overflowY: "scroll" }}>
+        <ItemDetail productDetail={productDetail} loading={loading}  />
 
       </div>
     </>
