@@ -9,6 +9,8 @@ export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useLocalStorage('cart', []);
     const [envio, setEnvio] = useState(0);
+    const [discount, setDiscount] = useState(false)
+
 
     const addItem = (item) => {
         const existInCart = cart.find((prod) => prod.id === item.id)
@@ -44,23 +46,27 @@ export const CartProvider = ({ children }) => {
     }
 
     const cartTotal = () => {
-        return cart.reduce((acum, prod) => acum += prod.price*prod.quantity, 0)
+        return cart.reduce((acum, prod) => acum += prod.price * prod.quantity, 0)
     }
 
     const delivery = (add) => {
         return setEnvio(add)
     }
 
+    const descuento = (set) => {
+        return setDiscount(set)
+    }
+
     const sumItem = (item) => {
-    const updateItem = cart.map((prod) => {
-        if (prod.id === item.id && prod.quantity<item.stock) {
-            return { ...prod, quantity: prod.quantity + 1 }
-        } else {
-            return prod
-        }
-    })
-    setCart(updateItem)
-    }  
+        const updateItem = cart.map((prod) => {
+            if (prod.id === item.id && prod.quantity < item.stock) {
+                return { ...prod, quantity: prod.quantity + 1 }
+            } else {
+                return prod
+            }
+        })
+        setCart(updateItem)
+    }
 
     const reduceItem = (item) => {
         const updateItem = cart.map((prod) => {
@@ -69,15 +75,15 @@ export const CartProvider = ({ children }) => {
             } else {
                 return prod
             }
-            
+
         })
         setCart(updateItem)
-        }  
+    }
 
-    
+
 
     return (
-        <CartContext.Provider value={{ cart, clear, envio, delivery, removeItem, isInCart, sumItem, reduceItem, addItem, cartTotal, cartQuantity }}>
+        <CartContext.Provider value={{ cart, descuento, discount, clear, envio, delivery, removeItem, isInCart, sumItem, reduceItem, addItem, cartTotal, cartQuantity }}>
             {children}
         </CartContext.Provider>
     )

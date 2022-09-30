@@ -13,7 +13,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import Icono from './Icono';
 import Logo from '../Logo';
 import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from './SearchBar';
@@ -61,23 +60,6 @@ export default function NavBar() {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  }));
-
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('sm')]: {
-        width: '12ch',
-        '&:focus': {
-          width: '20ch',
-        },
-      },
-    },
   }));
 
 
@@ -148,6 +130,9 @@ export default function NavBar() {
               <MenuItem onClick={() => navigate(`category/Tablets`)}>
                 <Typography textAlign="center">Tablets</Typography>
               </MenuItem>
+              <MenuItem onClick={() => navigate(`/mis_pedidos`)}>
+                <Typography textAlign="center">MIS PEDIDOS</Typography>
+              </MenuItem>
 
             </Menu>
           <Link to="/">
@@ -155,26 +140,31 @@ export default function NavBar() {
           </Link>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
             <Button
               onClick={() => navigate(`category/Componentes`)}
-              sx={{ my: 2, color: 'white', display: 'block' }}>
+              sx={{ my: 2, color: 'white', display: 'block', fontSize : "12px"  }}>
               Componentes
             </Button>
             <Button
               onClick={() => navigate(`category/Almacenamiento`)}
-              sx={{ my: 2, color: 'white', display: 'block' }}>
+              sx={{ my: 2, color: 'white', display: 'block' , fontSize : "12px"  }}>
               Almacenamiento
             </Button>
             <Button
               onClick={() => navigate(`category/Perifericos`)}
-              sx={{ my: 2, color: 'white', display: 'block' }}>
+              sx={{ my: 2, color: 'white', display: 'block', fontSize : "12px"   }}>
               Periféricos
             </Button>
             <Button
               onClick={() => navigate(`category/Tablets`)}
-              sx={{ my: 2, color: 'white', display: 'block' }}>
+              sx={{ my: 2, color: 'white', display: 'block', fontSize : "12px"   }}>
               Tablets
+            </Button>
+            <Button
+              onClick={() => navigate(`/mis_pedidos`)}
+              sx={{ my: 2, color: 'white', display: 'block', fontSize : "12px"   }}>
+              ||MIS PEDIDOS||
             </Button>
           </Box>
           <Search>

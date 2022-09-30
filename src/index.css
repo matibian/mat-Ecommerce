@@ -65,7 +65,7 @@ code {
     padding-left: 34px;
 }
 
-.css-106c1u2-MuiBadge-badge{
+.MuiBadge-badge, .css-106c1u2-MuiBadge-badge {
   background-color: rgb(174 27 212) !important
 }
 
@@ -166,4 +166,8 @@ code {
 
 .fa-times:before, .fa-plus:before, .fa-minus:before{
   color: rgb(79 36 113)
+}
+
+.MuiSnackbar-anchorOriginTopRight {
+  top: 60px !important;
 }

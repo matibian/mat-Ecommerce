@@ -1,9 +1,9 @@
-# E-commerce. Por Matías Bianchi
+# E-commerce. Por [Matías Bianchi](www.linkedin.com/in/matiasbianchi)
 
-# [![CSS](https://img.shields.io/badge/Link%20al%20sitio-blueviolet)](/)//cambiar
+# [![CSS](https://img.shields.io/badge/Link%20al%20sitio-blueviolet)](https://matibian.github.io/mat-Ecommerce/)
 
 
-# [AliArg - App con React.js](https://ecommerce-react-smael.netlify.app/)
+# [AliArg - App con React.js](https://matibian.github.io/mat-Ecommerce)
 
 ## Frameworks , libraries y tools con sus versiones
 
@@ -57,7 +57,7 @@ AliArg es un proyecyo ecommerce realizado en React.js de venta de productos info
 
 ### Categorías
 
-La web consta de una página principal donde se puede ver una presentación y un link de "Shop" donde se ingresa a visualizar la totalidad de los productos. En la barra de navegación se puede elegir entre las cuatro categorías de productos para visualizar. Además se pueden buscar los productos en la barra de búsqueda del NavBar. El logo de Home lleva a la visualización de todos los productos 
+La web consta de una página principal donde se puede ver una presentación y un link de "Shop" donde se ingresa a visualizar la totalidad de los productos. En la barra de navegación se puede elegir entre las cuatro categorías de productos para visualizar. El logo de Home lleva a la visualización de todos los productos 
 
 ![Alt Text](https://i.postimg.cc/VvD2mMRp/AliArg1.gif)
 
@@ -67,6 +67,9 @@ Abajo de la presentación se puede ver un carrousel de productos correspondiente
 ![Alt Text](https://i.postimg.cc/Dyn1hRWh/AliArg2.gif)
 
 
+Además se pueden buscar los productos en la barra de búsqueda del NavBar. 
+
+![Alt Text](https://i.postimg.cc/28FH4Pb9/Ali-Arg-Form.gif)
 
 
 ### Items
@@ -77,9 +80,13 @@ El id del producto es agregado automaticamente por firebase.
 ### Carrito
 
 El carrito muestra la totalidad de los productos elegidos y dispone de un contador para agregar o quitar cantidades del producto. Tiene un máximo según stock del producto y cuando se disminuye a cero, el producto se elimina del carrito. Además tiene botones para borrar individualmente los productos y la totalidad.
-El carrito cuenta ademas con un select de opciones para sumar el valor del envío al total. 
+Cuenta con un select de opciones para sumar el valor del envío al total. 
 
 ![Alt Text](https://i.postimg.cc/44WX4Fwt/Ali-Arg-Cart1.gif)
+
+Además puede usarse el codigo de descuento aliarg10 para obtener un descuento del 10%. En la orden luego se muestra el tipo de descuento al cual se accede
+
+![Alt Text](https://i.postimg.cc/gkPzD5hT/Ali-Argdiscount.gif)
 
 ### Formulario
 
@@ -88,6 +95,14 @@ El formulario de generación de la orden consta con una validación completa, do
 Al introducir correctamente la información, se muestra un cartel de éxito en la compra con la id del pedido, otorgada automaticamente por firebase.
 
 ![Alt Text](https://i.postimg.cc/28FH4Pb9/Ali-Arg-Form.gif)
+
+
+
+### Mis pedidos
+En la pestaña mis pedidos se puede ingresar el id de compra otorgado en el formulario para verificar el estado de la orden y el total del pedido.
+
+![Alt Text](https://i.postimg.cc/wMGs14K5/Ali-Arg-Orders.gif)
+
 
 ## Librerías utilizadas
 
@@ -119,13 +134,3 @@ Utilicé esta librería para darle un tipo de valoración más profesional al fo
 | Stock                       | Reducir la cantidad de stock de la base de datos al concluir una compra |
 | Favoritos                   | Añadir una lista de favoritos generada por cada usuario. (Asociada al Login)                         |
 | 
-| 
-
-Creado por:
-
-[Matías Bianchi](www.linkedin.com/in/matiasbianchi
-)
-
-
-
-

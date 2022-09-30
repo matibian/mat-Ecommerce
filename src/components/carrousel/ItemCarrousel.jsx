@@ -70,7 +70,8 @@ export default function ItemCarrousel({ item }) {
                 </CardContent>
                 <CardContent sx={{ positition: "relative", bottom: "25px" }} >
                     <Button variant="contained"
-                        sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", backgroundColor: "rgb(36 24 64)" }}
+                    color="secondary"
+                        sx={{ width: "55%", fontSize: "10px", paddingBottom: "2px", color: "white" }}
                         onClick={() => navigate(`/detail/${id}`)}
                     >
                         Detalles
@@ -83,7 +84,7 @@ export default function ItemCarrousel({ item }) {
                                 aria-label="add to shopping cart"
                                 onClick={onAdd}
                             >
-                                <AddShoppingCartIcon sx={{ color: "rgb(36 24 64)", paddingTop: "2px" }} />
+                                <AddShoppingCartIcon sx={{ paddingTop: "2px" }} color="secondary" />
                                 <Snackbar
                                     anchorOrigin={{ vertical, horizontal }}
                                     open={open}

@@ -14,10 +14,12 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore';
 export default function CheckOut() {
 
 
-    const { cart, cartTotal, envio, clear } = useCart();
+    const { cart, cartTotal, envio, clear, discount, descuento } = useCart();
     const [send, setSend] = useState(false);
     const [idCompra, setIdCompra] = useState();
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
+
 
     const { register,
         handleSubmit,
@@ -25,31 +27,32 @@ export default function CheckOut() {
     } = useForm();
     const onSubmit = data => {
         finishPurchase(data)
-
+        setLoading(true)
     }
-    console.log(errors)
-
 
     function finishPurchase(data) {
 
         let order = {
             buyer: data,
+            envio: envio,
             carrito: cart,
-            total: Number(cartTotal() + envio)
+            total: Number(cartTotal() + envio),
+            descuento: discount ? "10%" : "NO"
         };
         const db = getFirestore();
         const miCollection = collection(db, 'orders');
         addDoc(miCollection, order)
-        .then(({ id }) => {
-            setIdCompra(id)
-            clear()
-            setSend(true)
-        })
-        .catch((err)=>{
-            setError(err)
-        })
+            .then(({ id }) => {
+                setIdCompra(id)
+                clear()
+                setSend(true)
+                descuento(false)
+            })
+            .catch((err) => {
+                setError(err)
+            })
+            .finally(() => setLoading(false))
 
-        
 
     }
 
@@ -120,7 +123,7 @@ export default function CheckOut() {
                                             variant="standard"
                                             helperText={errors.tel ? "Ingrese un teléfono valido" : ""}
                                             error={errors.tel}
-                                            {...register("tel", { required: "Ingrese un telefono valido",minLength: 6, maxLength: 20, pattern:  /^(0|[0-9]\d*)(\.\d+)?$/})}
+                                            {...register("tel", { required: "Ingrese un telefono valido", minLength: 6, maxLength: 20, pattern: /^(0|[0-9]\d*)(\.\d+)?$/ })}
                                         />
                                     </Box>
                                     <br />
@@ -134,36 +137,50 @@ export default function CheckOut() {
                                             variant="standard"
                                             error={errors.email}
                                             helperText={errors.email ? "Ingrese un email valido" : ""}
-                                            {...register("email", { required: true, maxLength: 50, pattern: { 
-                                                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                                message: "Email no valido"}})}
+                                            {...register("email", {
+                                                required: true, maxLength: 50, pattern: {
+                                                    value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                                    message: "Email no valido"
+                                                }
+                                            })}
                                             type="text" />
                                     </Box>
-
-                                    <Button
-                                        variant="contained"
-                                        endIcon={<SendIcon />}
-                                        type="submit"
-                                        color="secondary"
-                                        sx={{ color: "white" }}
-                                    >
-                                        Enviar
-                                    </Button>
+                                    {!loading ?
+                                        <Button
+                                            disabled = {cart.length===0}
+                                            variant="contained"
+                                            endIcon={<SendIcon />}
+                                            type="submit"
+                                            color="secondary"
+                                            sx={{ color: "white" }}
+                                        >
+                                            Enviar
+                                        </Button>
+                                        :
+                                        <Button
+                                            disabled
+                                            variant="contained"
+                                            color="secondary"
+                                            sx={{ color: "white" }}
+                                        >
+                                            Espere...
+                                        </Button>
+                                    }
                                 </form>
                             </>
                             :
                             <Grid sx={{ padding: '10vh 0' }}>
                                 <Typography variant="body2" color="text.primary" sx={{ fontSize: 25, fontWeight: "bold", padding: "5px" }} >
-                                    {!error? "Su pedido esta siendo procesado": "Hubo un error al procesar los datos"}
+                                    {!error ? "Su pedido esta siendo procesado" : "Hubo un error al procesar los datos"}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ fontSize: 19, fontWeight: "bold", padding: "5px" }} >
-                                    {!error? "Muchas gracias por su compra": "Intente nuevamente en un instante"}
+                                    {!error ? "Muchas gracias por su compra" : "Intente nuevamente en un instante"}
                                 </Typography>
                                 <br />
                                 {!idCompra
                                     ? <CircularProgress color="secondary" />
                                     : <Typography variant="body2" color="text.primary" sx={{ fontSize: 15, fontWeight: "bold", padding: "5px" }} >
-                                        {!error? "Su id de compra es " + idCompra:""}
+                                        {!error ? "Su id de compra es " + idCompra : ""}
                                     </Typography>
                                 }
 
