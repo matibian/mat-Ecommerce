@@ -1,21 +1,21 @@
 {
-  "main.css": "/mat-Ecommerce/static/css/main.1b35da21.chunk.css",
-  "main.js": "/mat-Ecommerce/static/js/main.4fbbdd98.chunk.js",
-  "main.js.map": "/mat-Ecommerce/static/js/main.4fbbdd98.chunk.js.map",
-  "static/js/1.19227b26.chunk.js": "/mat-Ecommerce/static/js/1.19227b26.chunk.js",
-  "static/js/1.19227b26.chunk.js.map": "/mat-Ecommerce/static/js/1.19227b26.chunk.js.map",
-  "static/css/2.1b80a9df.chunk.css": "/mat-Ecommerce/static/css/2.1b80a9df.chunk.css",
-  "static/js/2.1d09a527.chunk.js": "/mat-Ecommerce/static/js/2.1d09a527.chunk.js",
-  "static/js/2.1d09a527.chunk.js.map": "/mat-Ecommerce/static/js/2.1d09a527.chunk.js.map",
-  "runtime~main.js": "/mat-Ecommerce/static/js/runtime~main.859bf31c.js",
-  "runtime~main.js.map": "/mat-Ecommerce/static/js/runtime~main.859bf31c.js.map",
-  "static/media/styles.css": "/mat-Ecommerce/static/media/revicons.2feb69cc.eot",
-  "static/media/logosoloblanco.svg": "/mat-Ecommerce/static/media/logosoloblanco.c81c0908.svg",
-  "static/media/logo.svg": "/mat-Ecommerce/static/media/logo.25e425db.svg",
-  "static/media/logo.png": "/mat-Ecommerce/static/media/logo.03fded62.png",
-  "static/css/main.1b35da21.chunk.css.map": "/mat-Ecommerce/static/css/main.1b35da21.chunk.css.map",
-  "static/css/2.1b80a9df.chunk.css.map": "/mat-Ecommerce/static/css/2.1b80a9df.chunk.css.map",
-  "index.html": "/mat-Ecommerce/index.html",
-  "precache-manifest.e5e236dcda66e199641fcf781224ef5a.js": "/mat-Ecommerce/precache-manifest.e5e236dcda66e199641fcf781224ef5a.js",
-  "service-worker.js": "/mat-Ecommerce/service-worker.js"
+  "files": {
+    "main.css": "/mat-Ecommerce/static/css/main.23020e5b.css",
+    "main.js": "/mat-Ecommerce/static/js/main.83455af8.js",
+    "static/js/787.2f9788ca.chunk.js": "/mat-Ecommerce/static/js/787.2f9788ca.chunk.js",
+    "static/media/logo.png": "/mat-Ecommerce/static/media/logo.984f2d1cdee39efb8bc0.png",
+    "static/media/revicons.eot": "/mat-Ecommerce/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/mat-Ecommerce/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/mat-Ecommerce/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/logo.svg": "/mat-Ecommerce/static/media/logo.70a7346966ccd5fa1a334ce9370bc25b.svg",
+    "static/media/logosoloblanco.svg": "/mat-Ecommerce/static/media/logosoloblanco.aba2abcc5a68365250de8ea782b8ebbe.svg",
+    "index.html": "/mat-Ecommerce/index.html",
+    "main.23020e5b.css.map": "/mat-Ecommerce/static/css/main.23020e5b.css.map",
+    "main.83455af8.js.map": "/mat-Ecommerce/static/js/main.83455af8.js.map",
+    "787.2f9788ca.chunk.js.map": "/mat-Ecommerce/static/js/787.2f9788ca.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23020e5b.css",
+    "static/js/main.83455af8.js"
+  ]
 }
