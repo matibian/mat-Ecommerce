@@ -65,6 +65,10 @@ code {
     padding-left: 34px;
 }
 
+.css-xgs5wp .MuiGrid-item{
+  padding-left: 0 !important;
+}
+
 .MuiBadge-badge, .css-106c1u2-MuiBadge-badge {
   background-color: rgb(174 27 212) !important
 }
