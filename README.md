@@ -133,4 +133,3 @@ Utilicé esta librería para darle un tipo de valoración más profesional al fo
 | Login                       | Crear un login para verificar usuarios                                                               |
 | Stock                       | Reducir la cantidad de stock de la base de datos al concluir una compra |
 | Favoritos                   | Añadir una lista de favoritos generada por cada usuario. (Asociada al Login)                         |
-| 
